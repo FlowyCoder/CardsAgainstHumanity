@@ -1,9 +1,10 @@
 import eventlet
-import socketio
-import json
 import jsonpickle
-from classes.player import Player
+import socketio
+
 from classes.game import Game
+from classes.helperFunctions import get_room
+from classes.player import Player
 
 sio = socketio.Server()
 app = socketio.WSGIApp(sio, static_files={
@@ -11,8 +12,7 @@ app = socketio.WSGIApp(sio, static_files={
 })
 
 rooms = dict()
-
-g = Game()
+games = dict()
 
 
 @sio.event
@@ -30,18 +30,22 @@ def my_message(sid, data):
 def player_account(sid, data):
     print(data)
     x = Player(sid, data['name'], None, 0)
-    g.players.append(x)
     sio.enter_room(sid, data['room'])
     if data['room'] in rooms:
         rooms.get(data['room']).append(sid)
     else:
         rooms[data['room']] = [sid]
-    print(g.players)
+        games[data['room']] = Game(data['room'])
+
+    games[data['room']].players.append(x)
+    print(games)
 
 
 @sio.on("white card")
 def white_card(sid, data):
-    drawed_card = g.drawWhite()
+    room = str(get_room(games, sid))
+    print(room + " hi")
+    drawed_card = games[room].drawWhite()
     drawed_card_json = "{'name': '" + drawed_card + "'}"
     print(drawed_card_json)
     # sio.send(drawed_card_json, sid)
@@ -51,7 +55,8 @@ def white_card(sid, data):
 # Should be sended by group host (first one joined)
 @sio.on('black card')
 def black_card(sid, data):
-    drawed_card = g.drawBlack()
+    room = get_room(games, sid)
+    drawed_card = games[room].drawBlack()
     drawed_card_json = jsonpickle.encode(drawed_card)
     print(drawed_card_json)
     for key, value in rooms.items():

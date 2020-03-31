@@ -1,14 +1,16 @@
-import requests
 import json
 import random
+
+import requests
 
 
 class Game:
     players = []
     white_card_deck = None
     black_card_deck = None
+    room = None
 
-    def __init__(self):
+    def __init__(self, room):
 
         # Load Json from CaH Json Website
         payload = {'decks[]': 'Base', 'type': 'JSON'}
@@ -26,6 +28,8 @@ class Game:
         # Base pack 460
         # TODO another deck for already used cards to later shuffle in
         random.shuffle(self.white_card_deck)
+
+        self.room = room
 
     def drawBlack(self):
         choosen_card = random.choice(self.black_card_deck)
