@@ -23,11 +23,7 @@ class Game:
         self.white_card_deck = o['whiteCards']
         print(self.black_card_deck)
 
-        # Random ordered list
-        random.shuffle(self.black_card_deck)
-        # Base pack 460
-        # TODO another deck for already used cards to later shuffle in
-        random.shuffle(self.white_card_deck)
+        # No need for shuffle, because the cards getting choosen randomly
 
         self.room = room
 
