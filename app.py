@@ -11,7 +11,6 @@ app = socketio.WSGIApp(sio, static_files={
     '/': {'content_type': 'text/html', 'filename': 'index.html'}
 })
 
-middle_deck = jsonpickle.encode(data)
 rooms = dict()
 games = dict()
 
@@ -83,10 +82,6 @@ def disconnect(sid):
     sio.leave_room(sid)
     g.removePlayer(sid)
     print('disconnect ', sid)
-
-
-def create_and_send_deck(sid, room):
-
 
 if __name__ == '__main__':
     eventlet.wsgi.server(eventlet.listen(('', 5000)), app)
