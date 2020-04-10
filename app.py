@@ -6,11 +6,12 @@ from classes.game import Game
 from classes.helperFunctions import get_room
 from classes.player import Player
 
-sio = socketio.Server()
+sio = socketio.Server(cors_allowed_origins='*')
 app = socketio.WSGIApp(sio, static_files={
     '/': {'content_type': 'text/html', 'filename': 'index.html'}
 })
 
+middle_deck = jsonpickle.encode(data)
 rooms = dict()
 games = dict()
 
@@ -38,7 +39,9 @@ def player_account(sid, data):
         games[data['room']] = Game(data['room'])
 
     games[data['room']].players.append(x)
+    sio.emit('new player', x.get_json(), data['room'])  # Sending new player information to other players
     print(games)
+    create_and_send_deck(sid, room)
 
 
 @sio.on("white card")
@@ -50,6 +53,10 @@ def white_card(sid, data):
     print(drawed_card_json)
     # sio.send(drawed_card_json, sid)
     sio.emit('white card', drawed_card_json, room=sid)
+    for x in games[room].players:
+        if x.id == sid:
+            x.hand.append(drawed_card)
+            break
 
 
 # Should be sended by group host (first one joined)
@@ -76,6 +83,9 @@ def disconnect(sid):
     sio.leave_room(sid)
     g.removePlayer(sid)
     print('disconnect ', sid)
+
+
+def create_and_send_deck(sid, room):
 
 
 if __name__ == '__main__':

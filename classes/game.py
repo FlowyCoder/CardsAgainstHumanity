@@ -5,9 +5,11 @@ import requests
 
 
 class Game:
-    players = []
+    _players = []
+    activePlayer = None
     white_card_deck = None
     black_card_deck = None
+    middle_deck = []
     room = None
 
     def __init__(self, room):
@@ -38,13 +40,25 @@ class Game:
         return choosen_card
 
     def removePlayer(self, sid):
-        for player in self.players:
+        for player in self._players:
             if player.id == sid:
                 self.players.remove(player)
                 break
 
     def addPoint(self, sid):
-        for player in self.players:
+        for player in self._players:
             if player.id == sid:
                 player.points += 1
                 break
+
+    @property
+    def player(self):
+        return self._players
+
+    def add_player(self, player):
+        if len(self._players) == 0:
+            self.activePlayer = player
+
+        self._players.append(player)
+
+    players = property(player, add_player)

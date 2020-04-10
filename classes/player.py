@@ -1,7 +1,7 @@
 class Player:
     id = 0
     name = ""
-    hand = None
+    hand = []
     points = 0
 
     def __init__(self, id, name, hand, points):
@@ -12,3 +12,6 @@ class Player:
 
     def __repr__(self):
         return str(self.id) + self.name + str(self.hand) + str(self.points)
+
+    def get_json(self):
+        return "{'id' : '" + self.id + "', 'name' : '" + self.name + "'}"
