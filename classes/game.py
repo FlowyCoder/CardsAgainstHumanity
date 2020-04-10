@@ -51,7 +51,7 @@ class Game:
                 player.points += 1
                 break
 
-    @property
+
     def player(self):
         return self._players
 
