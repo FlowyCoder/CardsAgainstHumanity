@@ -40,7 +40,7 @@ def player_account(sid, data):
     games[data['room']].players.append(x)
     sio.emit('new player', x.get_json(), data['room'])  # Sending new player information to other players
     print(games)
-    create_and_send_deck(sid, room)
+    # create_and_send_deck(sid, room)
     return games[data['room']]
 
 
