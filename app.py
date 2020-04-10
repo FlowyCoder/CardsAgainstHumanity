@@ -41,7 +41,7 @@ def player_account(sid, data):
     sio.emit('new player', x.get_json(), data['room'])  # Sending new player information to other players
     print(games)
     # create_and_send_deck(sid, room)
-    return games[data['room']].players
+    return games[data['room']].players.map(p => p.get_json())
 
 
 @sio.on("white card")
