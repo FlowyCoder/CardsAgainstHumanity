@@ -1,22 +1,23 @@
 import json
 import random
+from player import Player
+from cards import BlackCard, WhiteCard
 
 import requests
 
-
 class Game:
-    status = False
-    _players = []
-    white_card_deck = None
-    black_card_deck = None
-    middle_deck = []
-    host = None
-    room = None
-    card_deck = ""
-    placed_cards = []
-    zar = 0
 
-    def __init__(self, room, host):
+    def __init__(self, game):
+
+        self.status = False
+        self._players: Player[] = []
+        self.middle_deck = []
+        self.host = None
+        self.card_deck = ""
+        self.placed_cards = []
+        self.zar = 0
+        self.room = room
+        self.hand_size = 7
 
         # Load Json from CaH Json Website
         self.card_deck = "Base"
@@ -26,26 +27,24 @@ class Game:
         o = json.loads(black_white_deck)
 
         # Load json into list object
-        self.black_card_deck = o['blackCards']
-        self.white_card_deck = o['whiteCards']
-        print(self.black_card_deck)
+        self.black_cards: list = o['blackCards']
+        self.white_cards: list = o['whiteCards']
+        random.shuffle(self.black_cards)
+        random.shuffle(self.white_cards)
 
-        # No need for shuffle, because the cards getting choosen randomly
+    def draw_black(self):
+        return self.black_cards.pop()
 
-        self.room = room
-        self.host = host
-
-    def drawBlack(self):
-        choosen_card = random.choice(self.black_card_deck)
-        self.black_card_deck.remove(choosen_card)
+    def draw_white(self, amount = 1):
+        choosen_cards = self.white_cards[amount:]
+        del self.white_cards[amount:]
         return choosen_card
 
-    def drawWhite(self):
-        choosen_card = random.choice(self.white_card_deck)
-        self.white_card_deck.remove(choosen_card)
-        return choosen_card
+    def draw_player_hands(self):
+        for player in self._players:
+            player.hand = self.draw_white(self.hand_size)
 
-    def removePlayer(self, sid):
+    def remove_player(self, sid):
         for player in self._players:
             if player.id == sid:
                 self.players.remove(player)
@@ -53,20 +52,20 @@ class Game:
 
     def addPoint(self, sid):
         for player in self._players:
-            if player.id == sid:
+            if player.sid == sid:
                 player.points += 1
                 break
 
-    def player(self):
+    def get_player(self):
         return self._players
 
-    def add_player(self, player):
+    def add_player(self, player: Player):
         if len(self._players) == 0:
-            self.activePlayer = player
+            self.host = player.sid
 
         self._players.append(player)
 
-    players = property(player, add_player)
+    players = property(get_player, add_player)
 
     def new_zar(self):
         number_players = len(self._players)

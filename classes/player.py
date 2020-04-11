@@ -1,9 +1,4 @@
 class Player:
-    sid = 0
-    name = ""
-    hand = []
-    points = 0
-    spectator = False
 
     def __init__(self, sid, name, hand, points, spec):
         self.sid = sid

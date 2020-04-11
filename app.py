@@ -4,16 +4,16 @@ import socketio
 import json
 
 from classes import player
-from classes.game import Game
-from classes.helperFunctions import get_room
 from classes.player import Player
+from game import Game
+from house import House
 
 sio = socketio.Server(cors_allowed_origins='*')
 app = socketio.WSGIApp(sio, static_files={
     '/': {'content_type': 'text/html', 'filename': 'index.html'}
 })
 
-games = dict()
+house = House()
 
 @sio.event
 def connect(sid, environ):
@@ -27,42 +27,30 @@ def my_message(sid, data):
 
 @sio.on("join")
 def join(sid, data):
-    [name, room] = data
+    [name, game_name] = data
     player = Player(sid, data['name'], None, 0)
 
-    sio.enter_room(sid, room)
+    sio.enter_room(sid, game_name)
 
-    if room not in games:
-        games[room] = Game(room, sid)
+    game = house.get_game(game_name)
+    game.players.append(player)
 
-    games[room].players.append(player)
-    sio.emit('player_join', jsonpickle.encode(player), room)  # Sending new player information to other players
-    print(games)
-    # create_and_send_deck(sid, room)
-    return games[room].players
+    sio.emit('player_join', jsonpickle.encode(player), game_name)  # Sending new player information to other players
+
+    return game.players
 
 
 @sio.on("game_start")
 def game_start(sid):
-    room = str(get_room(games, sid))
-    if games[room].host == sid:
-        game_starting(sid, room)
-    else:
+    game = house.get_game_of_player(sid)
+    if game.host != sid:
         return "{'response' : 'you are not the host'}"
 
+    game.draw_player_hands()
 
-def game_starting(sid, room):  # TODO time limit for one turn
-    players = games[room].players
-    amount_cards = 7
-    for player in players:  # Everyone gets 7 cards
-        deck = []
-        for i in range(1, amount_cards):
-            deck.append(games[room].drawWhite())
-        player.hand = deck
-        sio.send('game start', jsonpickle.encode(deck), player.id)
-
-    sio.emit(games[room].drawBlack(), room=sid)
-
+    players = game.players
+    for player in players:
+        sio.send('game_start', jsonpickle.encode({"hand": player.deck, "black": game.draw_black()}), player.sid)
 
 @sio.on("place_card")
 def place_card(sid, data):
