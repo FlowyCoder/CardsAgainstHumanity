@@ -34,11 +34,11 @@ def join(sid, data):
     if room not in games:
         games[room] = Game(room)
 
-    games[room].players.append(x)
+    games[room].players.append(player)
     sio.emit('player_join', player, room)  # Sending new player information to other players
     print(games)
     # create_and_send_deck(sid, room)
-    return jsonpickle.encode(games[data['room']].players)
+    return jsonpickle.encode(games[room].players)
 
 
 @sio.on("white card")
