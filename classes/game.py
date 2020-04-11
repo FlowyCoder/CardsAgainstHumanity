@@ -62,3 +62,6 @@ class Game:
         self._players.append(player)
 
     players = property(player, add_player)
+
+    def has_player(self, sid):
+        return len(list(filter( lambda p: p.sid == sid, self._players))) > 0

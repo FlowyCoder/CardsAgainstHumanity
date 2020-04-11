@@ -11,9 +11,7 @@ app = socketio.WSGIApp(sio, static_files={
     '/': {'content_type': 'text/html', 'filename': 'index.html'}
 })
 
-rooms = dict()
 games = dict()
-
 
 @sio.event
 def connect(sid, environ):
@@ -26,22 +24,21 @@ def my_message(sid, data):
     print('message ', data)
 
 
-@sio.on("player account")
-def player_account(sid, data):
-    print(data)
-    x = Player(sid, data['name'], None, 0)
-    sio.enter_room(sid, data['room'])
-    if data['room'] in rooms:
-        rooms.get(data['room']).append(sid)
-    else:
-        rooms[data['room']] = [sid]
-        games[data['room']] = Game(data['room'])
+@sio.on("join")
+def join(sid, data):
+    [name, room] = data
+    player = Player(sid, data['name'], None, 0)
 
-    games[data['room']].players.append(x)
-    sio.emit('new player', x.get_json(), data['room'])  # Sending new player information to other players
+    sio.enter_room(sid, room)
+
+    if room not in games:
+        games[room] = Game(room)
+
+    games[room].players.append(x)
+    sio.emit('player_join', player, room)  # Sending new player information to other players
     print(games)
     # create_and_send_deck(sid, room)
-    return list(map(lambda p: p.get_json(), games[data['room']].players))
+    return jsonpickle.encode(games[data['room']].players)
 
 
 @sio.on("white card")
