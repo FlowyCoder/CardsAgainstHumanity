@@ -126,7 +126,7 @@ def points(sid, data):
 
 @sio.event
 def disconnect(sid):
-    if(not sid) return
+    if(not sid): return
     sio.leave_room(sid)
     g.removePlayer(sid)
     print('disconnect ', sid)
