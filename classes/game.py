@@ -1,9 +1,11 @@
 import json
 import random
-from .player import Player
 from typing import List
 
 import requests
+
+from .player import Player
+
 
 class Game:
 
@@ -21,7 +23,7 @@ class Game:
 
         # Load Json from CaH Json Website
         self.card_deck = "Base"
-        payload = {"'decks[]': '" + self.card_deck + "', 'type': 'JSON'"}
+        payload = {'decks[]': self.card_deck, 'type': 'JSON', }
         r = requests.post('https://crhallberg.com/cah/output.php', payload)
         black_white_deck = r.text
         o = json.loads(black_white_deck)
