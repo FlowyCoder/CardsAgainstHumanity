@@ -39,7 +39,7 @@ def join(sid, data):
     sio.emit('player_join', jsonpickle.encode(player), room)  # Sending new player information to other players
     print(games)
     # create_and_send_deck(sid, room)
-    return json.loads(jsonpickle.encode(games[room].players))
+    return games[room].players
 
 
 @sio.on("white card")
