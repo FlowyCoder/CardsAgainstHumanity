@@ -16,7 +16,7 @@ class Game:
     placed_cards = []
     zar = 0
 
-    def __init__(self, room):
+    def __init__(self, room, host):
 
         # Load Json from CaH Json Website
         self.card_deck = "Base"
@@ -33,6 +33,7 @@ class Game:
         # No need for shuffle, because the cards getting choosen randomly
 
         self.room = room
+        self.host = host
 
     def drawBlack(self):
         choosen_card = random.choice(self.black_card_deck)
@@ -69,7 +70,8 @@ class Game:
 
     def new_zar(self):
         number_players = len(self._players)
-
         self.zar = (self.zar + 1) % number_players
-
         return self.zar
+      
+    def has_player(self, sid):
+        return len(list(filter( lambda p: p.sid == sid, self._players))) > 0
