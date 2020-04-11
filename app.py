@@ -28,7 +28,7 @@ def my_message(sid, data):
 @sio.on("join")
 def join(sid, data):
     [name, game_name] = data
-    player = Player(sid, data['name'], None, 0)
+    player = Player(sid, data['name'])
 
     sio.enter_room(sid, game_name)
 

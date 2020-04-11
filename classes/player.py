@@ -1,6 +1,6 @@
 class Player:
 
-    def __init__(self, sid, name, hand, points, spec):
+    def __init__(self, sid, name, hand = [], points = 0, spec = False):
         self.sid = sid
         self.name = name
         self.hand = hand
