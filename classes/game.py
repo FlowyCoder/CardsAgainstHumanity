@@ -16,7 +16,7 @@ class Game:
         self.card_deck = ""
         self.placed_cards = []
         self.zar = 0
-        self.room = room
+        self.game = game
         self.hand_size = 7
 
         # Load Json from CaH Json Website
