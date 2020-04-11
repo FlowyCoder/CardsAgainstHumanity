@@ -126,9 +126,9 @@ def points(sid, data):
 
 @sio.event
 def disconnect(sid):
-    if(not sid): return
-    sio.leave_room(sid)
-    g.removePlayer(sid)
+    game = house.get_game_of_player(sid)
+    sio.leave_room(sid, game.game)
+    game.remove_player(sid)
     print('disconnect ', sid)
 
 
