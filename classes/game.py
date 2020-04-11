@@ -1,6 +1,6 @@
 import json
 import random
-from './player' import Player
+from .player import Player
 from typing import List
 
 import requests
