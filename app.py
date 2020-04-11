@@ -5,8 +5,8 @@ import json
 
 from classes import player
 from classes.player import Player
-from game import Game
-from house import House
+from classes.game import Game
+from classes.house import House
 
 sio = socketio.Server(cors_allowed_origins='*')
 app = socketio.WSGIApp(sio, static_files={

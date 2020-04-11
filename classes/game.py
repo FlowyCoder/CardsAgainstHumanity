@@ -2,6 +2,7 @@ import json
 import random
 from player import Player
 from cards import BlackCard, WhiteCard
+from typing import List
 
 import requests
 
@@ -10,7 +11,7 @@ class Game:
     def __init__(self, game):
 
         self.status = False
-        self._players: Player[] = []
+        self._players: List[Player] = []
         self.middle_deck = []
         self.host = None
         self.card_deck = ""
