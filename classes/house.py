@@ -17,5 +17,5 @@ class House:
 		return game_name in self.games
 
 	def get_game_of_player(self, sid) -> Game:
-		return next(list(filter(lambda room: room.has_player(sid))), None)
+		return next(list(filter(lambda room: room.has_player(sid), self.games)), None)
 
