@@ -5,17 +5,22 @@ import requests
 
 
 class Game:
+    status = False
     _players = []
-    activePlayer = None
     white_card_deck = None
     black_card_deck = None
     middle_deck = []
+    host = None
     room = None
+    card_deck = ""
+    placed_cards = []
+    zar = 0
 
     def __init__(self, room):
 
         # Load Json from CaH Json Website
-        payload = {'decks[]': 'Base', 'type': 'JSON'}
+        self.card_deck = "Base"
+        payload = {"'decks[]': '" + self.card_deck + "', 'type': 'JSON'"}
         r = requests.post('https://crhallberg.com/cah/output.php', payload)
         black_white_deck = r.text
         o = json.loads(black_white_deck)
@@ -51,7 +56,6 @@ class Game:
                 player.points += 1
                 break
 
-
     def player(self):
         return self._players
 
@@ -62,3 +66,10 @@ class Game:
         self._players.append(player)
 
     players = property(player, add_player)
+
+    def new_zar(self):
+        number_players = len(self._players)
+
+        self.zar = (self.zar + 1) % number_players
+
+        return self.zar
