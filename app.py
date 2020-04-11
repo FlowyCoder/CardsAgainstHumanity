@@ -35,7 +35,7 @@ def join(sid, data):
         games[room] = Game(room)
 
     games[room].players.append(player)
-    sio.emit('player_join', player, room)  # Sending new player information to other players
+    sio.emit('player_join', jsonpickle.encode(player), room)  # Sending new player information to other players
     print(games)
     # create_and_send_deck(sid, room)
     return jsonpickle.encode(games[room].players)
