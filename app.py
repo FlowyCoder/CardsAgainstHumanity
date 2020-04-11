@@ -1,6 +1,7 @@
 import eventlet
 import jsonpickle
 import socketio
+import json
 
 from classes.game import Game
 from classes.helperFunctions import get_room
@@ -38,8 +39,7 @@ def join(sid, data):
     sio.emit('player_join', jsonpickle.encode(player), room)  # Sending new player information to other players
     print(games)
     # create_and_send_deck(sid, room)
-    print(type(jsonpickle.encode(games[room].players)), jsonpickle.encode(games[room].players) )
-    return jsonpickle.encode(games[room].players)
+    return json.loads(jsonpickle.encode(games[room].players))
 
 
 @sio.on("white card")
