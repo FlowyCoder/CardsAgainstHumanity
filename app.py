@@ -27,17 +27,20 @@ def my_message(sid, data):
 
 @sio.on("join")
 def join(sid, data):
-    [name, game_name] = data
-    player = Player(sid, data['name'])
+    name = data['name']
+    lobby = data['lobby']
 
-    sio.enter_room(sid, game_name)
+    player = Player(sid, name)
 
-    game = house.get_game(game_name)
-    game.players.append(player)
+    sio.enter_room(sid, lobby)
 
-    sio.emit('player_join', jsonpickle.encode(player), game_name)  # Sending new player information to other players
+    game = house.get_game(lobby)
+    if not game.add_player(player):
+        return {'error': 'Player name already exists'}
 
-    return game.players
+    sio.emit('player_join', {'name': player.name}, lobby)  # Sending new player information to other players
+
+    return {'players': list(map(lambda p: {'name': p.name}, game.players)), 'zar': game.zar}
 
 
 @sio.on("game_start")
@@ -126,9 +129,11 @@ def points(sid, data):
 
 @sio.event
 def disconnect(sid):
-    game = house.get_game_of_player(sid)
-    sio.leave_room(sid, game.game)
-    game.remove_player(sid)
+    for game in house.games.values():
+        if(game.has_player(sid)):
+            sio.leave_room(sid, game.name)
+            player = game.remove_player(sid)
+            sio.emit('player_leave', player.name, game.name)
     print('disconnect ', sid)
 
 

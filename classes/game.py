@@ -7,21 +7,20 @@ import requests
 
 class Game:
 
-    def __init__(self, game):
+    def __init__(self, name):
 
         self.status = False
-        self._players: List[Player] = []
+        self.players: List[Player] = []
         self.middle_deck = []
         self.host = None
-        self.card_deck = ""
+        self.card_deck = "Base"
         self.placed_cards = []
         self.zar = 0
-        self.game = game
+        self.name = name
         self.hand_size = 7
 
         # Load Json from CaH Json Website
-        self.card_deck = "Base"
-        payload = {"'decks[]': '" + self.card_deck + "', 'type': 'JSON'"}
+        payload = {'decks': self.card_deck, 'type': 'JSON'}
         r = requests.post('https://crhallberg.com/cah/output.php', payload)
         black_white_deck = r.text
         o = json.loads(black_white_deck)
@@ -41,36 +40,39 @@ class Game:
         return choosen_card
 
     def draw_player_hands(self):
-        for player in self._players:
+        for player in self.players:
             player.hand = self.draw_white(self.hand_size)
 
-    def remove_player(self, sid):
-        for player in self._players:
-            if player.id == sid:
-                self.players.remove(player)
-                break
-
     def addPoint(self, sid):
-        for player in self._players:
+        for player in self.players:
             if player.sid == sid:
                 player.points += 1
                 break
-
-    def get_player(self):
-        return self._players
+    
+    def remove_player(self, sid):
+        for player in self.players:
+            if player.sid == sid:
+                self.players.remove(player)
+                return player
 
     def add_player(self, player: Player):
-        if len(self._players) == 0:
+        print("playername: ", player.name, self.has_player_with_name(player.name), self.players)
+        if self.has_player_with_name(player.name):
+            return False
+        if len(self.players) == 0:
             self.host = player.sid
 
-        self._players.append(player)
+        if not self.has_player(player.sid):
+            self.players.append(player)
+        return True
 
-    players = property(get_player, add_player)
-
-    def new_zar(self):
-        number_players = len(self._players)
+    def next_zar(self):
+        number_players = len(self.players)
         self.zar = (self.zar + 1) % number_players
         return self.zar
       
     def has_player(self, sid):
-        return len(list(filter( lambda p: p.sid == sid, self._players))) > 0
+        return len(list(filter( lambda p: p.sid == sid, self.players))) > 0
+
+    def has_player_with_name(self, name):
+        return len(list(filter( lambda p: p.name == name, self.players))) > 0
