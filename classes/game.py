@@ -16,13 +16,14 @@ class Game:
         self.middle_deck = []
         self.host = None
         self.card_deck = "Base"
-        self.placed_cards = []
+        self.placed_cards = {}
+        self.black_card = ""
         self.zar = 0
         self.name = name
         self.hand_size = 7
 
         # Load Json from CaH Json Website
-        payload = {'decks': self.card_deck, 'type': 'JSON'}
+        payload = {'decks[]': [self.card_deck], 'type': 'JSON'}
         r = requests.post('https://crhallberg.com/cah/output.php', payload)
         black_white_deck = r.text
         o = json.loads(black_white_deck)
@@ -34,12 +35,13 @@ class Game:
         random.shuffle(self.white_cards)
 
     def draw_black(self):
-        return self.black_cards.pop()
+        self.black_card = self.black_cards.pop()
+        return self.black_card
 
     def draw_white(self, amount = 1):
-        choosen_cards = self.white_cards[amount:]
-        del self.white_cards[amount:]
-        return choosen_card
+        choosen_cards = self.white_cards[:amount]
+        del self.white_cards[:amount]
+        return choosen_cards
 
     def draw_player_hands(self):
         for player in self.players:
@@ -50,15 +52,19 @@ class Game:
             if player.sid == sid:
                 player.points += 1
                 break
+
+    def get_player(self, sid) -> Player:
+        return next(filter(lambda p: p.sid == sid, self.players), None)
     
     def remove_player(self, sid):
-        for player in self.players:
-            if player.sid == sid:
-                self.players.remove(player)
-                return player
+        player = self.get_player(sid)
+        if player:
+            self.players.remove(player)
+            if self.host == player.sid:
+                self.host = self.players[0].sid
+        return player
 
     def add_player(self, player: Player):
-        print("playername: ", player.name, self.has_player_with_name(player.name), self.players)
         if self.has_player_with_name(player.name):
             return False
         if len(self.players) == 0:
@@ -78,3 +84,6 @@ class Game:
 
     def has_player_with_name(self, name):
         return len(list(filter( lambda p: p.name == name, self.players))) > 0
+
+    def player_placed(self, sid, cards):
+        self.placed_cards[sid] = cards

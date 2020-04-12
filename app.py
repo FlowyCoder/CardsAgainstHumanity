@@ -43,32 +43,31 @@ def join(sid, data):
     return {'players': list(map(lambda p: {'name': p.name}, game.players)), 'zar': game.zar}
 
 
-@sio.on("game_start")
-def game_start(sid):
+@sio.on("start_game")
+def start_game(sid):
     game = house.get_game_of_player(sid)
+    if not game:
+        return {'error': 'You are not in a lobby'}
+
     if game.host != sid:
-        return "{'response' : 'you are not the host'}"
+        return {'error' : 'You are not the host'}
 
     game.draw_player_hands()
+    black = game.draw_black()
 
     players = game.players
     for player in players:
-        sio.send('game_start', jsonpickle.encode({"hand": player.deck, "black": game.draw_black()}), player.sid)
+        print("send: ", player.name, " ", player.hand)
+        sio.emit('game_start', {'hand': player.hand, 'black': black}, to=player.sid)
 
-@sio.on("place_card")
-def place_card(sid, data):
-    room = str(get_room(games, sid))
-    game = games[room]
-    players = game.players
-    card = data['text']
+@sio.on("place_cards")
+def place_cards(sid, cards):
+    game = house.get_game_of_player(sid)
+    game.player_placed(sid, cards)
+    player = game.get_player(sid)
+    print("Room: ", game.name, " Player: ", player.name, " rooms: ", sio.rooms)
 
-    for x in players:
-        if x.sid == sid:
-            for c in x.hand:
-                if c.text == card:
-                    game.placed_cards.append(c)
-                    x.hand.remove(c)
-                    break
+    sio.emit('cards_placed', player.name, room=game.name)
 
 
 @sio.on("reveal")
