@@ -16,7 +16,7 @@ class Game:
         self.host = None
         self.card_deck = "Base"
         self.placed_cards = {}
-        self.revealed_players = 0
+        self.revealed_players = []
         self.black_card = ""
         self.zar = 0
         self.name = name
@@ -39,20 +39,24 @@ class Game:
         self.black_card = self.black_cards.pop()
 
     def draw_white(self, amount = 1):
+        print("Draw ", amount)
         choosen_cards = self.white_cards[:amount]
         del self.white_cards[:amount]
         return choosen_cards
 
     def start_round(self):
-        game.draw_black()
-        randIds = random.shuffle([0, 1, 2, 3])
+        self.draw_black()
+        randIds = [0, 1, 2, 3]
+        random.shuffle(randIds)
         self.next_zar()
+        self.revealed_players = []
+        self.placed_cards = {}
 
-        for index, player in enumerate(self.players):
+        for player in self.players:
+            print(player.name, " hand: ", player.hand)
             player.hand += self.draw_white(self.hand_size - len(player.hand))
-            player.tempId = randIds[index]
+            player.tempId = randIds.pop()
             
-
     def addPoint(self, sid):
         for player in self.players:
             if player.sid == sid:
@@ -64,6 +68,9 @@ class Game:
 
     def get_player_with_name(self, name) -> Player:
         return next(filter(lambda p: p.name == name, self.players), None)
+    
+    def get_player_with_tempId(self, tempId) -> Player:
+        return next(filter(lambda p: p.tempId == tempId, self.players), None)
     
     def remove_player(self, sid):
         player = self.get_player(sid)
@@ -98,16 +105,29 @@ class Game:
         self.placed_cards[sid] = cards
         player = self.get_player(sid)
         for card in cards:
-            player.hand.remove(card)
+            if(card in player.hand):
+                self.white_cards.append(card)
+                player.hand.remove(card)
+            else:
+                print("Card: ",card," not in player hand: ",player.hand)
 
     def all_players_placed(self):
         return len(self.players) - 1 == len(self.placed_cards)
 
     def all_cards_revealed(self):
-        return len(self.players) - 1 == self.revealed_players
+        return len(self.players) - 1 == len(self.revealed_players)
 
     def player_won_game(self):
         for player in self.players:
             if player.points >= self.points_to_win:
                 return player
         return None
+
+    def get_zar(self) -> Player:
+        return self.players[self.zar]
+    
+    def player_revealed(self, sid):
+        self.revealed_players.append(sid)
+    
+    def is_player_revealed(self, sid):
+        return sid in self.revealed_players

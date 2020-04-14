@@ -61,7 +61,7 @@ def start_game(sid):
     players = game.players
     for player in players:
         print("send: ", player.name, " ", player.hand)
-        sio.emit('game_start', {'hand': player.hand, 'black': game.black_card, 'zar': game.zar}, to=player.sid)
+        sio.emit('game_start', {'hand': player.hand, 'black': game.black_card, 'zar': game.get_zar().name}, to=player.sid)
 
 @sio.on("place_cards")
 def place_cards(sid, cards):
@@ -74,32 +74,39 @@ def place_cards(sid, cards):
 
 
 @sio.on("reveal")
-def reveal_cards(sid):
+def reveal_cards(sid, pos):
     game = house.get_game_of_player(sid)
-    zar = game.players[game.zar]
+    zar = game.get_zar()
 
-    if gamep.players[zar.id].sid != sid:
+    if zar.sid != sid:
         return {'error': 'You are not the zar'}
 
     if not game.all_players_placed():
         return {'error': 'Not all players have placed their cards'}
 
-    player = random.choice(list(filter(lambda p: p.sid != sid, game.players)))
+    players = list(filter(lambda p: p.sid != sid and not game.is_player_revealed(p.sid), game.players))
+
+    if len(players) == 0:
+        return {'error': 'All players are revealed'}
+
+    player = random.choice(players)
+
+    game.player_revealed(player.sid)
     
-    sio.emit("cards_revealed", {'pos': player.tempId, 'cards': game.placed_cards[player.sid]}, room=game.name)
+    sio.emit("cards_revealed", {'pos': pos, 'tempId': player.tempId, 'cards': game.placed_cards[player.sid]}, room=game.name)
 
 
 @sio.on("winner_selected")
-def winner(sid, name):
+def winner(sid, tempId):
     game = house.get_game_of_player(sid)
 
-    if game.players[zar.id].sid != sid:
+    if game.get_zar().sid != sid:
         return {'error': 'You are not the zar'}
 
     if not game.all_cards_revealed():
         return {'error': 'Not all cards are revealed'}
 
-    winning_player = game.get_player_with_name(name)
+    winning_player = game.get_player_with_tempId(tempId)
 
     if not winning_player:
         return {'error': 'Player with name '+name+' not found'}
@@ -113,7 +120,7 @@ def winner(sid, name):
     else:
         game.start_round()
         for player in game.players:
-            sio.emit('next_round', {'hand': player.hand, 'black': game.black_card, 'zar': game.zar}, to=player.sid)
+            sio.emit('next_round', {'hand': player.hand, 'black': game.black_card, 'zar': game.get_zar().name}, to=player.sid)
     
 
 
@@ -157,6 +164,8 @@ def disconnect(sid):
         if(game.has_player(sid)):
             sio.leave_room(sid, game.name)
             player = game.remove_player(sid)
+            if len(game.players) == 0:
+                del house.games[game.name]
             sio.emit('player_leave', player.name, game.name)
     print('disconnect ', sid)
 
