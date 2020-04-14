@@ -39,8 +39,9 @@ def join(sid, data):
         return {'error': 'Player name already exists'}
 
     sio.emit('player_join', {'name': player.name}, lobby)  # Sending new player information to other players
+    host = game.get_player(game.host)
 
-    return {'players': list(map(lambda p: {'name': p.name}, game.players)), 'host': game.host}
+    return {'players': list(map(lambda p: {'name': p.name, 'points': 0}, game.players)), 'host': host.name}
 
 
 @sio.on("start_game")
@@ -103,7 +104,7 @@ def winner(sid, tempId):
     if game.get_zar().sid != sid:
         return {'error': 'You are not the zar'}
 
-    if game.all_cards_revealed():
+    if not game.all_cards_revealed():
         return {'error': 'Not all cards are revealed'}
 
     winning_player = game.get_player_with_tempId(tempId)
@@ -120,10 +121,8 @@ def winner(sid, tempId):
     else:
         game.start_round()
         for player in game.players:
-            sio.emit('next_round', {'hand': player.hand, 'black': game.black_card, 'zar': game.zar}, to=player.sid)
+            sio.emit('next_round', {'hand': player.hand, 'black': game.black_card, 'zar': game.get_zar().name, 'winner': winning_player.name}, to=player.sid)
 
-
-# TODO maybe save won black card in player class
 @sio.on("points")
 def points(sid, data):
     g.addPoint(sid)
