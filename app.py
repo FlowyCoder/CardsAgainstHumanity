@@ -1,13 +1,10 @@
-import eventlet
-import jsonpickle
-import socketio
-import json
 import random
 
-from classes import player
-from classes.player import Player
-from classes.game import Game
+import eventlet
+import socketio
+
 from classes.house import House
+from classes.player import Player
 
 sio = socketio.Server(cors_allowed_origins='*')
 app = socketio.WSGIApp(sio, static_files={
@@ -15,6 +12,7 @@ app = socketio.WSGIApp(sio, static_files={
 })
 
 house = House()
+
 
 @sio.event
 def connect(sid, environ):
@@ -25,6 +23,7 @@ def connect(sid, environ):
 @sio.event
 def my_message(sid, data):
     print('message ', data)
+
 
 @sio.on("join")
 def join(sid, data):
@@ -51,7 +50,7 @@ def start_game(sid):
         return {'error': 'You are not in a lobby'}
 
     if game.host != sid:
-        return {'error' : 'You are not the host'}
+        return {'error': 'You are not the host'}
 
     if len(game.players) < 3:
         return {'error': 'Not enough players in the Lobby'}
@@ -62,6 +61,7 @@ def start_game(sid):
     for player in players:
         print("send: ", player.name, " ", player.hand)
         sio.emit('game_start', {'hand': player.hand, 'black': game.black_card, 'zar': game.zar}, to=player.sid)
+
 
 @sio.on("place_cards")
 def place_cards(sid, cards):
@@ -78,14 +78,14 @@ def reveal_cards(sid):
     game = house.get_game_of_player(sid)
     zar = game.players[game.zar]
 
-    if gamep.players[zar.id].sid != sid:
+    if game.players[zar.id].sid != sid:
         return {'error': 'You are not the zar'}
 
     if not game.all_players_placed():
         return {'error': 'Not all players have placed their cards'}
 
     player = random.choice(list(filter(lambda p: p.sid != sid, game.players)))
-    
+
     sio.emit("cards_revealed", {'pos': player.tempId, 'cards': game.placed_cards[player.sid]}, room=game.name)
 
 
@@ -93,56 +93,27 @@ def reveal_cards(sid):
 def winner(sid, name):
     game = house.get_game_of_player(sid)
 
-    if game.players[zar.id].sid != sid:
+    if game.players[game.zar.id].sid != sid:
         return {'error': 'You are not the zar'}
 
-    if not game.all_cards_revealed():
+    if game.all_cards_revealed():
         return {'error': 'Not all cards are revealed'}
 
     winning_player = game.get_player_with_name(name)
 
     if not winning_player:
-        return {'error': 'Player with name '+name+' not found'}
+        return {'error': 'Player with name ' + name + ' not found'}
 
     game_winner = game.player_won_game()
     if game_winner:
         points = {}
-        for player in players:
+        for player in game.players:
             points[player.name] = player.points
-        sio.emit('game_end', points , room=room)
+        sio.emit('game_end', points, room=game.name)
     else:
         game.start_round()
         for player in game.players:
             sio.emit('next_round', {'hand': player.hand, 'black': game.black_card, 'zar': game.zar}, to=player.sid)
-    
-
-
-@sio.on("white_card")
-def white_card(sid, data):
-    room = str(get_room(games, sid))
-    print(room + " hi")
-    drawed_card = games[room].drawWhite()
-    drawed_card_json = "{'name': '" + drawed_card + "'}"
-    print(drawed_card_json)
-    # sio.send(drawed_card_json, sid)
-    sio.emit('white card', drawed_card_json, room=sid)
-    for x in games[room].players:
-        if x.id == sid:
-            x.hand.append(drawed_card)
-            break
-
-
-# Should be sended by group host (first one joined)
-@sio.on('black_card')
-def black_card(sid, data):
-    room = get_room(games, sid)
-    drawed_card = games[room].drawBlack()
-    drawed_card_json = jsonpickle.encode(drawed_card)
-    print(drawed_card_json)
-    for key, value in rooms.items():
-        if sid in value:
-            sio.emit('black card', drawed_card_json, room=key)
-            break
 
 
 # TODO maybe save won black card in player class
@@ -154,7 +125,7 @@ def points(sid, data):
 @sio.event
 def disconnect(sid):
     for game in house.games.values():
-        if(game.has_player(sid)):
+        if game.has_player(sid):
             sio.leave_room(sid, game.name)
             player = game.remove_player(sid)
             sio.emit('player_leave', player.name, game.name)
