@@ -13,14 +13,15 @@ class Game:
 
         self.status = False
         self.players: List[Player] = []
-        self.middle_deck = []
         self.host = None
         self.card_deck = "Base"
         self.placed_cards = {}
+        self.revealed_players = 0
         self.black_card = ""
         self.zar = 0
         self.name = name
         self.hand_size = 7
+        self.points_to_win = 5
 
         # Load Json from CaH Json Website
         payload = {'decks[]': [self.card_deck], 'type': 'JSON'}
@@ -36,16 +37,21 @@ class Game:
 
     def draw_black(self):
         self.black_card = self.black_cards.pop()
-        return self.black_card
 
     def draw_white(self, amount = 1):
         choosen_cards = self.white_cards[:amount]
         del self.white_cards[:amount]
         return choosen_cards
 
-    def draw_player_hands(self):
-        for player in self.players:
-            player.hand = self.draw_white(self.hand_size)
+    def start_round(self):
+        game.draw_black()
+        randIds = random.shuffle([0, 1, 2, 3])
+        self.next_zar()
+
+        for index, player in enumerate(self.players):
+            player.hand += self.draw_white(self.hand_size - len(player.hand))
+            player.tempId = randIds[index]
+            
 
     def addPoint(self, sid):
         for player in self.players:
@@ -55,6 +61,9 @@ class Game:
 
     def get_player(self, sid) -> Player:
         return next(filter(lambda p: p.sid == sid, self.players), None)
+
+    def get_player_with_name(self, name) -> Player:
+        return next(filter(lambda p: p.name == name, self.players), None)
     
     def remove_player(self, sid):
         player = self.get_player(sid)
@@ -85,5 +94,20 @@ class Game:
     def has_player_with_name(self, name):
         return len(list(filter( lambda p: p.name == name, self.players))) > 0
 
-    def player_placed(self, sid, cards):
+    def player_placed_cards(self, sid, cards):
         self.placed_cards[sid] = cards
+        player = self.get_player(sid)
+        for card in cards:
+            player.hand.remove(card)
+
+    def all_players_placed(self):
+        return len(self.players) - 1 == len(self.placed_cards)
+
+    def all_cards_revealed(self):
+        return len(self.players) - 1 == self.revealed_players
+
+    def player_won_game(self):
+        for player in self.players:
+            if player.points >= self.points_to_win:
+                return player
+        return None

@@ -2,6 +2,7 @@ import eventlet
 import jsonpickle
 import socketio
 import json
+import random
 
 from classes import player
 from classes.player import Player
@@ -40,7 +41,7 @@ def join(sid, data):
 
     sio.emit('player_join', {'name': player.name}, lobby)  # Sending new player information to other players
 
-    return {'players': list(map(lambda p: {'name': p.name}, game.players)), 'zar': game.zar}
+    return {'players': list(map(lambda p: {'name': p.name}, game.players)), 'host': game.host}
 
 
 @sio.on("start_game")
@@ -52,18 +53,20 @@ def start_game(sid):
     if game.host != sid:
         return {'error' : 'You are not the host'}
 
-    game.draw_player_hands()
-    black = game.draw_black()
+    if len(game.players) < 3:
+        return {'error': 'Not enough players in the Lobby'}
+
+    game.start_round()
 
     players = game.players
     for player in players:
         print("send: ", player.name, " ", player.hand)
-        sio.emit('game_start', {'hand': player.hand, 'black': black}, to=player.sid)
+        sio.emit('game_start', {'hand': player.hand, 'black': game.black_card, 'zar': game.zar}, to=player.sid)
 
 @sio.on("place_cards")
 def place_cards(sid, cards):
     game = house.get_game_of_player(sid)
-    game.player_placed(sid, cards)
+    game.player_placed_cards(sid, cards)
     player = game.get_player(sid)
     print("Room: ", game.name, " Player: ", player.name, " rooms: ", sio.rooms)
 
@@ -71,25 +74,47 @@ def place_cards(sid, cards):
 
 
 @sio.on("reveal")
-def reveal_cards(sid, data):  # in data pos of the revealed card
-    room = str(get_room(games, sid))
-    game = games[room]
-    zar = game.players[game.zar]  # Actual zar
+def reveal_cards(sid):
+    game = house.get_game_of_player(sid)
+    zar = game.players[game.zar]
 
-    if zar.id == sid:
-        sio.emit("cards_revealed", game.placed_cards[data['pos']], room=room)
+    if gamep.players[zar.id].sid != sid:
+        return {'error': 'You are not the zar'}
+
+    if not game.all_players_placed():
+        return {'error': 'Not all players have placed their cards'}
+
+    player = random.choice(list(filter(lambda p: p.sid != sid, game.players)))
+    
+    sio.emit("cards_revealed", {'pos': player.tempId, 'cards': game.placed_cards[player.sid]}, room=game.name)
 
 
 @sio.on("winner_selected")
-def winner(sid, data):
-    room = str(get_room(games, sid))
-    game = games[room]
+def winner(sid, name):
+    game = house.get_game_of_player(sid)
 
-    if game.players[game.zar].id == sid:
-        player_won = game.players[jsonpickle.decode(data['pos'], classes=player)]
-        new_zar = game.new_zar()
+    if game.players[zar.id].sid != sid:
+        return {'error': 'You are not the zar'}
 
-        sio.emit('winner', "{'player' : '" + jsonpickle.decode(player_won) + "', 'zar' : '" + new_zar + "'}", room=room)
+    if not game.all_cards_revealed():
+        return {'error': 'Not all cards are revealed'}
+
+    winning_player = game.get_player_with_name(name)
+
+    if not winning_player:
+        return {'error': 'Player with name '+name+' not found'}
+
+    game_winner = game.player_won_game()
+    if game_winner:
+        points = {}
+        for player in players:
+            points[player.name] = player.points
+        sio.emit('game_end', points , room=room)
+    else:
+        game.start_round()
+        for player in game.players:
+            sio.emit('next_round', {'hand': player.hand, 'black': game.black_card, 'zar': game.zar}, to=player.sid)
+    
 
 
 @sio.on("white_card")
