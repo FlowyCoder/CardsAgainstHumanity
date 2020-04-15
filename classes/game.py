@@ -39,7 +39,6 @@ class Game:
         self.black_card = self.black_cards.pop()
 
     def draw_white(self, amount = 1):
-        print("Draw ", amount)
         choosen_cards = self.white_cards[:amount]
         del self.white_cards[:amount]
         return choosen_cards
@@ -108,8 +107,6 @@ class Game:
             if(card in player.hand):
                 self.white_cards.append(card)
                 player.hand.remove(card)
-            else:
-                print("Card: ",card," not in player hand: ",player.hand)
 
     def all_players_placed(self):
         return len(self.players) - 1 == len(self.placed_cards)

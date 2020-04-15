@@ -112,8 +112,9 @@ def winner(sid, tempId):
     if not winning_player:
         return {'error': 'Player with name ' + name + ' not found'}
 
-    game_winner = game.player_won_game()
-    if game_winner:
+    winning_player.points += 1
+
+    if winning_player.points >= game.points_to_win:
         points = {}
         for player in game.players:
             points[player.name] = player.points
