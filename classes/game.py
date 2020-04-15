@@ -45,7 +45,7 @@ class Game:
 
     def start_round(self):
         self.draw_black()
-        randIds = [0, 1, 2, 3]
+        randIds = list(range(len(self.players)))
         random.shuffle(randIds)
         self.next_zar()
         self.revealed_players = []
