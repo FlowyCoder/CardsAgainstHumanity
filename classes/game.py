@@ -11,20 +11,23 @@ class Game:
 
     def __init__(self, name):
 
-        self.status = False
+        self.game_state = "Lobby" # Lobby / Game
         self.players: List[Player] = []
         self.host = None
-        self.card_deck = "Base"
+        self.card_decks = []
         self.placed_cards = {}
         self.revealed_players = []
-        self.black_card = ""
+        self.black_card = None
         self.zar = 0
         self.name = name
         self.hand_size = 7
         self.points_to_win = 5
+        self.set_card_decks(["Base"])
 
-        # Load Json from CaH Json Website
-        payload = {'decks[]': [self.card_deck], 'type': 'JSON'}
+    def set_card_decks(self, card_decks):
+        self.card_decks = card_decks
+
+        payload = {'decks[]': self.card_decks, 'type': 'JSON'}
         r = requests.post('https://crhallberg.com/cah/output.php', payload)
         black_white_deck = r.text
         o = json.loads(black_white_deck)
@@ -44,6 +47,7 @@ class Game:
         return choosen_cards
 
     def start_round(self):
+        self.game_state = "Game"
         self.draw_black()
         randIds = list(range(len(self.players)))
         random.shuffle(randIds)
@@ -53,6 +57,7 @@ class Game:
 
         for player in self.players:
             print(player.name, " hand: ", player.hand)
+            player.points = 0
             player.hand += self.draw_white(self.hand_size - len(player.hand))
             player.tempId = randIds.pop()
             
@@ -61,6 +66,13 @@ class Game:
             if player.sid == sid:
                 player.points += 1
                 break
+
+    def end_game(self):
+        self.game_state = "Lobby"
+        self.placed_cards = {}
+        self.revealed_players = []
+        self.black_card = None
+        self.zar = 0
 
     def get_player(self, sid) -> Player:
         return next(filter(lambda p: p.sid == sid, self.players), None)

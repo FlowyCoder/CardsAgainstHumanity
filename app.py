@@ -30,11 +30,14 @@ def join(sid, data):
     name = data['name']
     lobby = data['lobby']
 
-    player = Player(sid, name)
+    game = house.get_game(lobby)
 
+    if game.game_state != "Lobby":
+        return {'error': 'Game already running'}
+
+    player = Player(sid, name)
     sio.enter_room(sid, lobby)
 
-    game = house.get_game(lobby)
     if not game.add_player(player):
         return {'error': 'Player name already exists'}
 
@@ -115,6 +118,8 @@ def winner(sid, tempId):
     winning_player.points += 1
 
     if winning_player.points >= game.points_to_win:
+        game.end_game()
+
         points = {}
         for player in game.players:
             points[player.name] = player.points
@@ -123,6 +128,27 @@ def winner(sid, tempId):
         game.start_round()
         for player in game.players:
             sio.emit('next_round', {'hand': player.hand, 'black': game.black_card, 'zar': game.get_zar().name, 'winner': winning_player.name}, to=player.sid)
+
+@sio.on("change_settings")
+def change_settings(sid, settings):
+    game = house.get_game_of_player(sid)
+
+    if game.get_zar().sid != sid:
+        return {'error': 'You are not the zar'}
+    
+    if game.game_state != "Lobby":
+        return {'error': 'Settings can only be canged in the lobby'}
+
+    if settings['card_decks']:
+        game.set_card_decks(settings['card_decks'])
+
+    if settings['points_to_win']:
+        game.points_to_win = settings['points_to_win']
+
+    if settings['hand_size']:
+        game.hand_size = settings['hand_size']
+
+    sio.emit('settings_changed', settings, room=game.name)
 
 @sio.on("points")
 def points(sid, data):
@@ -134,9 +160,9 @@ def disconnect(sid):
     for game in house.games.values():
         if game.has_player(sid):
             sio.leave_room(sid, game.name)
-            player = game.remove_player(sid)
-            if len(game.players) == 0:
+            if len(game.players) == 1:
                 del house.games[game.name]
+            player = game.remove_player(sid)
             sio.emit('player_leave', player.name, game.name)
     print('disconnect ', sid)
 
