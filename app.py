@@ -162,6 +162,7 @@ def disconnect(sid):
             sio.leave_room(sid, game.name)
             if len(game.players) == 1:
                 del house.games[game.name]
+                return
             player = game.remove_player(sid)
             sio.emit('player_leave', player.name, game.name)
     print('disconnect ', sid)
