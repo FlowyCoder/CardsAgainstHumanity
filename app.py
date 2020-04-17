@@ -172,7 +172,7 @@ def players(sid, password):
     if(password != 'Umpa Lumpas'):
         return {'error': 'Wrong password.'}
 
-    return [player.name for players in house.games.values() for player in players]
+    return [player.name for game in house.games.values() for player in game.players]
 
 
 @sio.event
