@@ -160,9 +160,19 @@ def change_settings(sid, settings):
 
     return {'info': 'The settings have been chnaged.'}
 
-@sio.on("points")
-def points(sid, data):
-    g.addPoint(sid)
+@sio.on("games")
+def games(sid, password):
+    if(password != 'Umpa Lumpas'):
+        return {'error': 'Wrong password.'}
+
+    return list(map(lambda game: {'name': game.name, 'players': len(game.players), 'state': game.game_state}, house.games.values()))
+
+@sio.on("players")
+def players(sid, password):
+    if(password != 'Umpa Lumpas'):
+        return {'error': 'Wrong password.'}
+
+    return [player.name for players in house.games.values() for player in players]
 
 
 @sio.event
