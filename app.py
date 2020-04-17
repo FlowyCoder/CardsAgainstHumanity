@@ -33,31 +33,37 @@ def join(sid, data):
     game = house.get_game(lobby)
 
     if game.game_state != "Lobby":
-        return {'error': 'Game already running'}
+        return {'error': 'Game already running.'}
 
     player = Player(sid, name)
     sio.enter_room(sid, lobby)
 
     if not game.add_player(player):
-        return {'error': 'Player name already exists'}
+        return {'error': 'Player name already exists.'}
 
     sio.emit('player_join', {'name': player.name}, lobby)  # Sending new player information to other players
     host = game.get_player(game.host)
 
-    return {'players': list(map(lambda p: {'name': p.name, 'points': 0}, game.players)), 'host': host.name}
+    return {
+        'players': list(map(lambda p: {'name': p.name, 'points': 0}, game.players)),
+        'host': host.name,
+        'points_to_win': game.points_to_win,
+        'hand_size': game.hand_size,
+        'card_decks': game.card_decks
+    }
 
 
 @sio.on("start_game")
 def start_game(sid):
     game = house.get_game_of_player(sid)
     if not game:
-        return {'error': 'You are not in a lobby'}
+        return {'error': 'You are not in a lobby.'}
 
     if game.host != sid:
-        return {'error': 'You are not the host'}
+        return {'error': 'You are not the host.'}
 
     if len(game.players) < 3:
-        return {'error': 'Not enough players in the Lobby'}
+        return {'error': 'Not enough players in the Lobby.'}
 
     game.start_round()
 
@@ -83,15 +89,15 @@ def reveal_cards(sid, pos):
     zar = game.get_zar()
 
     if zar.sid != sid:
-        return {'error': 'You are not the zar'}
+        return {'error': 'You are not the zar.'}
 
     if not game.all_players_placed():
-        return {'error': 'Not all players have placed their cards'}
+        return {'error': 'Not all players have placed their cards.'}
 
     players = list(filter(lambda p: p.sid != sid and not game.is_player_revealed(p.sid), game.players))
 
     if len(players) == 0:
-        return {'error': 'All players are revealed'}
+        return {'error': 'All players are revealed.'}
 
     player = random.choice(players)
 
@@ -105,15 +111,15 @@ def winner(sid, tempId):
     game = house.get_game_of_player(sid)
 
     if game.get_zar().sid != sid:
-        return {'error': 'You are not the zar'}
+        return {'error': 'You are not the zar.'}
 
     if not game.all_cards_revealed():
-        return {'error': 'Not all cards are revealed'}
+        return {'error': 'Not all cards are revealed.'}
 
     winning_player = game.get_player_with_tempId(tempId)
 
     if not winning_player:
-        return {'error': 'Player with name ' + name + ' not found'}
+        return {'error': 'Player with name ' + name + ' not found.'}
 
     winning_player.points += 1
 
@@ -134,10 +140,10 @@ def change_settings(sid, settings):
     game = house.get_game_of_player(sid)
 
     if game.get_zar().sid != sid:
-        return {'error': 'You are not the zar'}
+        return {'error': 'You are not the zar.'}
     
     if game.game_state != "Lobby":
-        return {'error': 'Settings can only be canged in the lobby'}
+        return {'error': 'Settings can only be canged in the lobby.'}
 
     if settings['card_decks']:
         game.set_card_decks(settings['card_decks'])
@@ -150,6 +156,8 @@ def change_settings(sid, settings):
 
     sio.emit('settings_changed', settings, room=game.name)
 
+    return {'info': 'The settings have been chnaged.'}
+
 @sio.on("points")
 def points(sid, data):
     g.addPoint(sid)
@@ -157,15 +165,33 @@ def points(sid, data):
 
 @sio.event
 def disconnect(sid):
+    print('disconnect ', sid)
+
     for game in house.games.values():
         if game.has_player(sid):
             sio.leave_room(sid, game.name)
+
             if len(game.players) == 1:
                 del house.games[game.name]
                 return
+
+            zar = game.get_zar()
             player = game.remove_player(sid)
+
             sio.emit('player_leave', player.name, game.name)
-    print('disconnect ', sid)
+                
+            if len(game.players) < 3:
+                game.end_game()
+                points = {}
+                for player in game.players:
+                    points[player.name] = player.points
+                    sio.emit('game_end', points, room=game.name)
+            elif player == zar:
+                game.start_round()
+                for player in game.players:
+                    sio.emit('next_round', {'hand': player.hand, 'black': game.black_card, 'zar': game.get_zar().name, 'winner': ''}, to=player.sid)
+
+
 
 
 if __name__ == '__main__':
