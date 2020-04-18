@@ -140,3 +140,17 @@ class Game:
     
     def is_player_revealed(self, sid):
         return sid in self.revealed_players
+
+    def to_json(self):
+        return {
+            'name': self.name,
+            'players': [player.to_json() for player in self.players],
+            'host': self.host,
+            'card_decks': self.card_decks,
+            'placed_cards': self.placed_cards,
+            'revealed_players': self.revealed_players,
+            'black_card': self.black_card,
+            'zar': self.zar,
+            'hand_size': self.hand_size,
+            'points_to_win': self.points_to_win
+        }

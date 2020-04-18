@@ -133,9 +133,19 @@ def winner(sid, tempId):
             points[player.name] = player.points
         sio.emit('game_end', points, room=game.name)
     else:
+        tempIds = {}
+        for player in game.players:
+            tempIds[player.tempId] = player.name
+
         game.start_round()
         for player in game.players:
-            sio.emit('next_round', {'hand': player.hand, 'black': game.black_card, 'zar': game.get_zar().name, 'winner': winning_player.name}, to=player.sid)
+            sio.emit('next_round', {
+                'hand': player.hand,
+                'black': game.black_card,
+                'zar': game.get_zar().name,
+                'winner': winning_player.name,
+                'tempIds': tempIds
+            }, to=player.sid)
 
 @sio.on("change_settings")
 def change_settings(sid, settings):
@@ -165,14 +175,14 @@ def games(sid, password):
     if(password != 'Umpa Lumpas'):
         return {'error': 'Wrong password.'}
 
-    return list(map(lambda game: {'name': game.name, 'players': len(game.players), 'state': game.game_state}, house.games.values()))
+    return [game.to_json() for game in house.games.values()]
 
 @sio.on("players")
 def players(sid, password):
     if(password != 'Umpa Lumpas'):
         return {'error': 'Wrong password.'}
 
-    return [player.name for game in house.games.values() for player in game.players]
+    return [player.to_json() for game in house.games.values() for player in game.players]
 
 
 @sio.event
