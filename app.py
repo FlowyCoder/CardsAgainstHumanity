@@ -199,7 +199,7 @@ def disconnect(sid):
 
             zar = game.get_zar()
             player = game.remove_player(sid)
-
+            sio.emit('host', game.get_player(game.host).name, game.name)
             sio.emit('player_leave', player.name, game.name)
                 
             if len(game.players) < 3:
@@ -211,7 +211,12 @@ def disconnect(sid):
             elif player == zar:
                 game.start_round()
                 for player in game.players:
-                    sio.emit('next_round', {'hand': player.hand, 'black': game.black_card, 'zar': game.get_zar().name, 'winner': ''}, to=player.sid)
+                    sio.emit('next_round', {
+                        'hand': player.hand,
+                        'black': game.black_card,
+                        'zar': game.get_zar().name,
+                        'winner': ''
+                    }, to=player.sid)
 
 
 

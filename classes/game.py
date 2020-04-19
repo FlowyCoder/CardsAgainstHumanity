@@ -87,7 +87,7 @@ class Game:
         player = self.get_player(sid)
         if player:
             self.players.remove(player)
-            if self.host == player.sid:
+            if self.host == player.sid and len(self.players) > 0:
                 self.host = self.players[0].sid
         return player
 
