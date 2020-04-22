@@ -80,7 +80,6 @@ def place_cards(sid, cards):
     game = house.get_game_of_player(sid)
     game.player_placed_cards(sid, cards)
     player = game.get_player(sid)
-    print("Room: ", game.name, " Player: ", player.name, " rooms: ", sio.rooms)
 
     sio.emit('cards_placed', player.name, room=game.name)
 
