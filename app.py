@@ -71,6 +71,7 @@ def start_game(sid):
 
     players = game.players
     for player in players:
+        player.points = 0
         print("send: ", player.name, " ", player.hand)
         sio.emit('game_start', {'hand': player.hand, 'black': game.black_card, 'zar': game.get_zar().name}, to=player.sid)
 
