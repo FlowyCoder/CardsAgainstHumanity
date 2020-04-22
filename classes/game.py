@@ -56,7 +56,6 @@ class Game:
         self.placed_cards = {}
 
         for player in self.players:
-            print(player.name, " hand: ", player.hand)
             player.hand += self.draw_white(self.hand_size - len(player.hand))
             player.tempId = randIds.pop()
             
