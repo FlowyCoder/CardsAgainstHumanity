@@ -32,7 +32,7 @@ class Game:
         # o = json.loads(black_white_deck)
 
         # Load json into list object
-        decks = load_decks(decks, language)
+        decks = load_decks(card_decks, self.language)
 
         self.black_cards: list = decks['black_cards']
         self.white_cards: list = decks['white_cards']
