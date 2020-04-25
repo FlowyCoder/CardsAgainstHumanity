@@ -1,11 +1,8 @@
 import json
 import random
 from typing import List
-
-import requests
-
 from .player import Player
-
+from .deck_loader import load_decks
 
 class Game:
 
@@ -24,18 +21,21 @@ class Game:
         self.hand_size = 7
         self.points_to_win = 5
         self.set_card_decks(["Base"])
+        self.language = "en"
 
     def set_card_decks(self, card_decks):
         self.card_decks = card_decks
 
-        payload = {'decks[]': self.card_decks, 'type': 'JSON'}
-        r = requests.post('https://crhallberg.com/cah/output.php', payload)
-        black_white_deck = r.text
-        o = json.loads(black_white_deck)
+        # payload = {'decks[]': self.card_decks, 'type': 'JSON'}
+        # r = requests.post('https://crhallberg.com/cah/output.php', payload)
+        # black_white_deck = r.text
+        # o = json.loads(black_white_deck)
 
         # Load json into list object
-        self.black_cards: list = o['blackCards']
-        self.white_cards: list = o['whiteCards']
+        decks = load_decks(decks, language)
+
+        self.black_cards: list = decks['black_cards']
+        self.white_cards: list = decks['white_cards']
         random.shuffle(self.black_cards)
         random.shuffle(self.white_cards)
 

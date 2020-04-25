@@ -202,6 +202,9 @@ def change_settings(sid, settings):
 
     if settings['hand_size']:
         game.hand_size = settings['hand_size']
+    
+    if settings['language']:
+        game.language = settings['language']
 
     sio.emit('settings_changed', settings, room=game.name)
 
