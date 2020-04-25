@@ -8,6 +8,7 @@ class Player:
         self.spectator = spec
         self.tempId = 0
         self.deleted_card = False
+        self.reveal_pos = None
 
     def to_json(self):
         return {

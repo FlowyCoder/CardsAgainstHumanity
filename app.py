@@ -42,14 +42,27 @@ def join(sid, data):
         sio.emit('player_join', {'name': disconnected_player.name}, lobby)
         host = game.get_player(game.host)
 
+        players = []
+        temp_ids = {}
+        revealed = {}
+
+        for player in game.players:
+            player_data = {'name': player.name, 'points': player.points}
+            if player.reveal_pos: player_data['placed'] = True
+            players.append(player_data)
+            temp_ids[player.reveal_pos] = player.tempId
+
+            if player.sid in game.revealed_players:
+                revealed[player.reveal_pos] = game.placed_cards[player.sid]
+
         return {
-            'players': list(map(lambda p: {'name': p.name, 'points': p.points}, game.players)),
+            'players': players,
             'host': host.name,
             'points_to_win': game.points_to_win,
             'hand_size': game.hand_size,
             'card_decks': game.card_decks,
-            'placed_cards': game.placed_cards,
-            'revealed_players': game.revealed_players,
+            'temp_ids': temp_ids,
+            'revealed': revealed,
             'hand': disconnected_player.hand,
             'black': game.black_card,
             'zar': game.get_zar().name,
@@ -124,6 +137,8 @@ def reveal_cards(sid, pos):
     player = random.choice(players)
 
     game.player_revealed(player.sid)
+
+    player.reveal_pos = pos
     
     sio.emit("cards_revealed", {'pos': pos, 'tempId': player.tempId, 'cards': game.placed_cards[player.sid]}, room=game.name)
 
