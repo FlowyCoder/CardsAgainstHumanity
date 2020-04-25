@@ -101,13 +101,12 @@ def start_game(sid):
     if len(game.players) < 3:
         return {'error': 'You need at least 3 players in the lobby.'}
 
-    for player in players:
+    for player in game.players:
         player.hand = []
 
     game.start_round()
 
-    players = game.players
-    for player in players:
+    for player in game.players:
         player.points = 0
         sio.emit('game_start', {'hand': player.hand, 'black': game.black_card, 'zar': game.get_zar().name}, to=player.sid)
 
