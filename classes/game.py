@@ -89,7 +89,7 @@ class Game:
     def remove_player(self, sid):
         player = self.get_player(sid)
         if player:
-            if self.players.index(player) <= self.zar
+            if self.players.index(player) <= self.zar:
                 self.zar == (self.zar - 1) % len(self.players)
 
             self.players.remove(player)
