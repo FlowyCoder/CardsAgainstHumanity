@@ -7,7 +7,7 @@ def load_decks(decks, lang):
 
     for deck in decks:
         f = open(path.dirname(__file__) + "/../decks/{0}/{1}.txt".format(lang, deck), "r")
-        data = json.loads(f.read())
+        data = json.loads(f.read().decode('utf-8'))
         black_cards += data['blackCards']
         white_cards += data['whiteCards'] 
 
