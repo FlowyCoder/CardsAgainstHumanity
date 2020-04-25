@@ -20,8 +20,8 @@ class Game:
         self.name = name
         self.hand_size = 7
         self.points_to_win = 5
-        self.set_card_decks(["Base"])
         self.language = "en"
+        self.set_card_decks(["Base"])
 
     def set_card_decks(self, card_decks):
         self.card_decks = card_decks
