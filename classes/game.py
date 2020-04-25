@@ -160,5 +160,6 @@ class Game:
             'black_card': self.black_card,
             'zar': self.zar,
             'hand_size': self.hand_size,
-            'points_to_win': self.points_to_win
+            'points_to_win': self.points_to_win,
+            'disconnected': [player.to_json() for player in self.disconnected]
         }
