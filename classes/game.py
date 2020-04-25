@@ -83,8 +83,8 @@ class Game:
     def get_player_with_tempId(self, tempId) -> Player:
         return next(filter(lambda p: p.tempId == tempId, self.players), None)
 
-    def get_disconnected_player(self, sid, name):
-        return next(filter(lambda p: p.sid == sid and p.name == name ,self.disconnected), None)
+    def get_disconnected_player(self, name):
+        return next(filter(lambda p: p.name == name ,self.disconnected), None)
     
     def remove_player(self, sid):
         player = self.get_player(sid)
