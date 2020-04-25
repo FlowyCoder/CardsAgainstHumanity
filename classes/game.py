@@ -90,7 +90,7 @@ class Game:
         player = self.get_player(sid)
         if player:
             if self.players.index(player) <= self.zar:
-                self.zar == (self.zar - 1) % len(self.players)
+                self.zar = (self.zar - 1) % len(self.players)
 
             self.players.remove(player)
             if self.host == player.sid and len(self.players) > 0:
