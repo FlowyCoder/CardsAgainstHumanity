@@ -163,5 +163,8 @@ class Game:
             'zar': self.zar,
             'hand_size': self.hand_size,
             'points_to_win': self.points_to_win,
-            'disconnected': [player.to_json() for player in self.disconnected]
+            'disconnected': [player.to_json() for player in self.disconnected],
+            'language': self.language,
+            'black_cards': self.black_cards,
+            'white_cards': self.white_cards
         }
