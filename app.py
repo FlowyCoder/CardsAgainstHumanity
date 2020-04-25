@@ -101,6 +101,9 @@ def start_game(sid):
     if len(game.players) < 3:
         return {'error': 'You need at least 3 players in the lobby.'}
 
+    for player in players:
+        player.hand = []
+
     game.start_round()
 
     players = game.players
