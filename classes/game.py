@@ -13,6 +13,7 @@ class Game:
 
         self.game_state = "Lobby" # Lobby / Game
         self.players: List[Player] = []
+        self.disconnected: List[Player] = []
         self.host = None
         self.card_decks = []
         self.placed_cards = {}
@@ -56,6 +57,7 @@ class Game:
         self.placed_cards = {}
 
         for player in self.players:
+            player.deleted_card = False
             player.hand += self.draw_white(self.hand_size - len(player.hand))
             player.tempId = randIds.pop()
             
@@ -80,6 +82,9 @@ class Game:
     
     def get_player_with_tempId(self, tempId) -> Player:
         return next(filter(lambda p: p.tempId == tempId, self.players), None)
+
+    def get_disconnected_player(self, sid, name):
+        return next(filter(lambda p: p.sid == sid and p.name == name ,self.disconnected), None)
     
     def remove_player(self, sid):
         player = self.get_player(sid)
@@ -87,9 +92,14 @@ class Game:
             self.players.remove(player)
             if self.host == player.sid and len(self.players) > 0:
                 self.host = self.players[0].sid
+            if self.game_state == "Game":
+                self.disconnected.append(player)
         return player
 
     def add_player(self, player: Player):
+        if player in self.disconnected:
+            self.disconnected.remove(player)
+
         if self.has_player_with_name(player.name):
             return False
         if len(self.players) == 0:

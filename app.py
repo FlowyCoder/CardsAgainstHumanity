@@ -33,6 +33,26 @@ def join(sid, data):
     lobby = data['lobby']
 
     game = house.get_game(lobby)
+    disconnected_player = game.get_disconnected_player(sid, name)
+
+    if disconnected_player:
+        sio.enter_room(sid, lobby)
+        game.add_player(player)
+        sio.emit('player_join', {'name': player.name}, lobby)
+        host = game.get_player(game.host)
+
+        return {
+            'players': list(map(lambda p: {'name': p.name, 'points': p.points}, game.players)),
+            'host': host.name,
+            'points_to_win': game.points_to_win,
+            'hand_size': game.hand_size,
+            'card_decks': game.card_decks,
+            'placed_cards': game.placed_cards,
+            'revealed_players': game.revealed_players,
+            'hand': disconnected_player.hand,
+            'black': game.black_card,
+            'zar': game.get_zar().name,
+        }
 
     if game.game_state != "Lobby":
         return {'error': 'Game already running.'}
@@ -65,7 +85,7 @@ def start_game(sid):
         return {'error': 'You are not the host.'}
 
     if len(game.players) < 3:
-        return {'error': 'Not enough players in the Lobby.'}
+        return {'error': 'You need at least 3 players in the lobby.'}
 
     game.start_round()
 
@@ -167,7 +187,25 @@ def change_settings(sid, settings):
 
     sio.emit('settings_changed', settings, room=game.name)
 
-    return {'info': 'The settings have been chnaged.'}
+    return {'info': 'The settings have been changed.'}
+
+@sio.on("delete_card")
+def delete_card(sid, card):
+    game = house.get_game_of_player(sid)
+
+    if not game:
+        return {'error': 'You are not in a game.'}
+
+    player = game.get_player(sid)
+
+    if player.deleted_card:
+        return {'error': 'You already deleted a card.'}
+
+    if card not in player.hand:
+        return {'error': 'The card does not exist in your hand.'}
+
+    player.hand.remove(card)
+    player.deleted_card = True
 
 @sio.on("games")
 def games(sid, password):
