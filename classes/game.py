@@ -89,6 +89,9 @@ class Game:
     def remove_player(self, sid):
         player = self.get_player(sid)
         if player:
+            if self.players.index(player) <= self.zar
+                self.zar == (self.zar - 1) % len(self.players)
+
             self.players.remove(player)
             if self.host == player.sid and len(self.players) > 0:
                 self.host = self.players[0].sid
@@ -110,8 +113,7 @@ class Game:
         return True
 
     def next_zar(self):
-        number_players = len(self.players)
-        self.zar = (self.zar + 1) % number_players
+        self.zar = (self.zar + 1) % len(self.players)
         return self.zar
       
     def has_player(self, sid):
