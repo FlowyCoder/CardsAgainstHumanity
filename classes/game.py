@@ -21,10 +21,9 @@ class Game:
         self.hand_size = 7
         self.points_to_win = 5
         self.language = "en"
-        self.set_card_decks(["Base"])
+        self.card_decks = ["Base"]
 
-    def set_card_decks(self, card_decks):
-        self.card_decks = card_decks
+    def get_card_decks(self):
 
         # payload = {'decks[]': self.card_decks, 'type': 'JSON'}
         # r = requests.post('https://crhallberg.com/cah/output.php', payload)
@@ -32,7 +31,7 @@ class Game:
         # o = json.loads(black_white_deck)
 
         # Load json into list object
-        decks = load_decks(card_decks, self.language)
+        decks = load_decks(self.card_decks, self.language)
 
         self.black_cards: list = decks['black_cards']
         self.white_cards: list = decks['white_cards']
@@ -49,6 +48,7 @@ class Game:
 
     def start_round(self):
         self.game_state = "Game"
+        self.get_card_decks()
         self.draw_black()
         randIds = list(range(len(self.players)))
         random.shuffle(randIds)
