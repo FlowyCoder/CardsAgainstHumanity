@@ -188,7 +188,7 @@ def winner(sid, tempId):
 def change_settings(sid, settings):
     game = house.get_game_of_player(sid)
 
-    print("settings": settings)
+    print("settings", settings)
 
     if game.get_zar().sid != sid:
         return {'error': 'You are not the zar.'}
