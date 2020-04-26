@@ -187,7 +187,7 @@ def winner(sid, tempId):
 @sio.on("change_settings")
 def change_settings(sid, settings):
     game = house.get_game_of_player(sid)
-    
+
     if game.get_zar().sid != sid:
         return {'error': 'You are not the zar.'}
     
@@ -195,7 +195,7 @@ def change_settings(sid, settings):
         return {'error': 'Settings can only be canged in the lobby.'}
 
     if settings['card_decks']:
-        game.set_card_decks(settings['card_decks'])
+        game.card_decks = settings['card_decks']
 
     if settings['points_to_win']:
         game.points_to_win = settings['points_to_win']
