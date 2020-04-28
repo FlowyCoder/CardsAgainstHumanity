@@ -1,4 +1,5 @@
 import requests
+import os
 
 def load(card_deck):
     payload = {'decks[]': card_deck, 'type': 'JSON'}
@@ -13,6 +14,7 @@ for deck in decks:
     text = load(deck)
 
     for lang in langs:
-        file = open("./decks/{0}/{1}.txt".format(lang, deck), "w+")
-        file.write(text)
-        file.close()
+        os.rename("./decks/{0}/{1}.txt".format(lang, deck), "./decks/{0}/{1}.json".format(lang, deck))
+        # file = open("./decks/{0}/{1}.txt".format(lang, deck), "w+")
+        # file.write(text)
+        # file.close()

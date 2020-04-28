@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"name": "app-next",
+			"path": "..\\..\\Programmieren\\Directus\\app-next"
+		},
+		{
+			"name": "webseite",
+			"path": "..\\BWG\\webseite"
+		},
+		{
+			"name": "robolab-group-034",
+			"path": "..\\..\\Programmieren\\Robolab\\robolab-group-034"
+		},
+		{
+			"path": "..\\..\\Programmieren\\Directus\\extension-toolkit"
+		},
+		{
+			"path": "..\\..\\Programmieren\\Directus\\SDK-Generator"
+		},
+		{
+			"path": "..\\cah"
+		},
+		{
+			"path": "..\\..\\Programmieren\\Directus\\test-sdk"
+		},
+		{
+			"path": "."
+		}
+	]
+}
