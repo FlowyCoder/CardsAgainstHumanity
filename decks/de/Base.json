@@ -5,11 +5,11 @@
          "pick": 1
       },
       {
-         "text": "Ich habe 99 Probleme, aber keine.",
+         "text": "Ich habe 99 Probleme, aber _ ist keins davon.",
          "pick": 1
       },
       {
-         "text": "Was ist die beste Freundin eines Mädchens?",
+         "text": "Was ist der beste Freund eines Mädchens?",
          "pick": 1
       },
       {
@@ -17,7 +17,7 @@
          "pick": 1
       },
       {
-         "text": "So endet die Welt / So endet die Welt / Nicht mit einem Knall, sondern mit _.",
+         "text": "So endet die Welt \/ So endet die Welt \/ Nicht mit einem Knall, sondern mit _.",
          "Pick": 1
       },
       {
@@ -53,7 +53,7 @@
          "pick": 1
       },
       {
-         "text": "Was ist das nächste Happy Meal &reg; Spielzeug?",
+         "text": "Was ist das nächste Happy Meal&reg; Spielzeug?",
          "pick": 1
       },
       {
@@ -61,7 +61,7 @@
          "Pick": 1
       },
       {
-         "text": "In t Im neuen Disney Channel Original-Film kämpft Hannah Montana zum ersten Mal mit _.",
+         "text": "Im neuen Disney Channel Original-Film kämpft Hannah Montana zum ersten Mal mit _.",
          "pick": 1
       },
       {
@@ -73,7 +73,7 @@
          "pick": 1
       },
       {
-         "text": " Was ist das meiste Emo?",
+         "text": " Was ist am meisten Emo?",
          "pick": 1
       },
       {
@@ -93,11 +93,11 @@
          "Pick": 1
       },
       {
-         "text": "_. Betcha kann nicht nur einen haben!",
+         "text": "_. Wetten du kannst nicht nur einen haben!",
          "pick": 1
       },
       {
-         "text": " War! <br> <br> Wofür ist es gut?",
+         "text": " Krieg!<br><br>Wofür ist es gut?",
          "pick": 1
       },
       {
@@ -121,7 +121,7 @@
          "pick": 1
       },
       {
-         "text": " Was bringt dich immer zum Schlafen?",
+         "text": " Womit kann man dich immer Flachlegen?",
          "pick": 1
       },
       {
@@ -129,7 +129,7 @@
          "pick": 1
       },
       {
-         "text": "Was haben die USA den Kindern Afghanistans abgeworfen?",
+         "text": "Was haben die USA den Kindern Afghanistans per Flugzeug zugeworfen?",
          "pick": 1
       },
       {
@@ -137,7 +137,7 @@
          "pick": 1
       },
       {
-         "text": "Was gibt es im Himmel?",
+         "text": "Was gibt es viel im Himmel?",
          "pick": 1
       },
       {
@@ -145,35 +145,35 @@
          "pick": 1
       },
       {
-         "text": "Wenn ich ein Milliardär bin, werde ich eine 50-Fuß-Statue errichten gedenken Sie _.",
+         "text": "Wenn ich ein Milliardär bin, werde ich eine 50-Meter-Statue errichten, _ gedenkend.",
          "pick": 1
       },
       {
-         "text": " Was ist die neue Modediät?",
+         "text": "Was ist die neue Modediät?",
          "pick": 1
       },
       {
-         "text": " Wenn ich der Präsident der Vereinigten Staaten bin, ich erstellt die Abteilung für _.",
+         "text": "Wenn ich der Präsident der Vereinigten Staaten bin, ich erstellt die Abteilung für _.",
          "pick": 1
       },
       {
-         "text": " _. Es ist eine Falle!",
+         "text": "_. Es ist eine Falle!",
          "pick": 1
       },
       {
-         "text": " Wie halte ich meinen Beziehungsstatus aufrecht?",
+         "text": "Wie halte ich meinen Beziehungsstatus aufrecht?",
          "pick": 1
       },
       {
-         "text": " Worauf werde ich rechtzeitig zurückkommen? Leute davon überzeugen, dass ich ein mächtiger Zauberer bin?",
+         "text": "Was werde ich aus der Vergangenheit zurückbringen um Leute davon überzeugen, dass ich ein mächtiger Zauberer bin?",
          "pick": 1
       },
       {
-         "text": " Während die Vereinigten Staaten die Sowjetunion zum Mond rasten, hat die mexikanische Regierung Millionen Pesos in die Forschung über _ gesteckt.",
+         "text": "Während die Vereinigten Staaten und die Sowjetunion zum Mond rasten, hat die mexikanische Regierung Millionen Pesos in die Forschung über _ gesteckt.",
          "pick": 1
       },
       {
-         "text": "In dieser Saison zum Broadway kommen, _: The Musical.",
+         "text": "In dieser Saison kommt zum Broadway, _: The Musical.",
          "pick": 1
       },
       {
@@ -181,7 +181,7 @@
          "pick": 1
       },
       {
-         "text": "Was gibt mir unkontrollierbares Gas?",
+         "text": "Wovon muss ich unkontrolliert furzen?",
          "Pick": 1
       },
       {
@@ -189,11 +189,11 @@
          "Pick": 1
       },
       {
-         "text": " Was belebt die Party immer wieder?",
+         "text": "Was belebt die Party immer wieder?",
          "pick": 1
       },
       {
-         "text": " Was gebe ich für die Fastenzeit auf?",
+         "text": "Was gebe ich für die Fastenzeit auf?",
          "pick": 1
       },
       {
@@ -201,19 +201,19 @@
          "pick": 1
       },
       {
-         "text": " Die Klassenexkursion wurde durch _.",
+         "text": "Die Klassenexkursion wurde durch _ ruiniert.",
          "pick": 1
       },
       {
-         "text": " Als der Pharao ungerührt blieb, rief Moses eine Pest herab of _.",
+         "text": "Als der Pharao ungerührt blieb, rief Moses eine Pest von _ herab.",
          "pick": 1
       },
       {
-         "text": " Ich weiß nicht, mit welchen Waffen der Dritte Weltkrieg ausgetragen wird, aber der IV. Weltkrieg wird mit _.",
+         "text": "Ich weiß nicht, mit welchen Waffen der Dritte Weltkrieg ausgetragen wird, aber im IV. Weltkrieg wird mit _ gekämpft.",
          "pick": 1
       },
       {
-         "text": "Was nutzt Teach for America, um Studenten in der Innenstadt zum Erfolg zu inspirieren?",
+         "text": "Was nutzt die Leehre von Amerika, um Studenten in der Innenstadt zum Erfolg zu inspirieren?",
          "pick": 1
       },
       {
@@ -221,11 +221,11 @@
          "pick": 1
       },
       {
-         "text": " Warum tue ich überall weh?",
+         "text": "Warum tut es mir überall weh?",
          "pick": 1
       },
       {
-         "text": " Studien zeigen, dass Laborratten 50% schneller durch Labyrinthe navigieren, nachdem sie _ ausgesetzt wurden.",
+         "text": "Studien zeigen, dass Laborratten 50% schneller durch Labyrinthe navigieren, nachdem sie _ ausgesetzt wurden.",
          "pick": 1
       },
       {
@@ -233,7 +233,7 @@
          "pick": 1
       },
       {
-         "text": "Was ist mein Antidrogen?",
+         "text": "Was ist meine Antidroge?",
          "pick": 1
       },
       {
@@ -253,7 +253,7 @@
          "pick": 1
       },
       {
-         "text": " _: kindergeprüft, muttergeprüft.",
+         "text": " _: kind-getestet, mutter-geprüft.",
          "pick": 1
       },
       {
@@ -261,7 +261,7 @@
          "pick": 1
       },
       {
-         "text": "Ich habe _ nie wirklich verstanden, bis ich _.",
+         "text": "Ich habe _ nie wirklich verstanden, bis ich _ entgegnet bin.",
          "pick": 2
       },
       {
@@ -269,19 +269,19 @@
          "pick": 2
       },
       {
-         "text": " Lifetime &reg; präsentiert _, ​​die Geschichte von _.",
+         "text": " Lifetime&reg; präsentiert _, ​​die Geschichte von _.",
          "pick": 2
       },
       {
-         "text": " Make a haiku.",
+         "text": " Mach ein haiku.",
          "pick": 3
       },
       {
-         "text": " In M. Night Shyamalans neuem Film, Bruce Willis entdeckt, dass _ wirklich _ die ganze Zeit _ gewesen war.",
+         "text": " In M. Night Shyamalans neuem Film entdeckt Bruce Willis, dass _ wirklich _ die ganze Zeit gewesen war.",
          "pick": 2
       },
       {
-         "text": " _ ist ein rutschiger Hang, der zu _.",
+         "text": " _ ist ein rutschiger Hang, der zu _ führt.",
          "pick": 2
       },
       {
@@ -293,7 +293,7 @@
          "pick": 2
       },
       {
-         "text": " Als ich auf Säure stolperte, wurde _ zu _.",
+         "text": " Als ich auf Säure war, wurde _ zu _.",
          "pick": 2
       },
       {
@@ -305,7 +305,7 @@
          "pick": 2
       },
       {
-         "text": " Dear Abby, <br> <br> I ' Ich habe einige Probleme mit _ und möchte Ihren Rat.",
+         "text": " Liebe Abby,<br><br>Ich habe einige Probleme mit _ und möchte Ihren Rat.",
          "pick": 1
       },
       {
@@ -321,19 +321,19 @@
          "pick": 1
       },
       {
-         "text": " Das Leben der Indianer wurde für immer verändert, als der Weiße sie _.",
+         "text": "Das Leben der Indianer wurde für immer verändert, als der Weiße ihnen _ zeigte.",
          "pick": 1
       },
       {
-         "text": " vorstellte. Als nächstes auf ESPN2 die World Series of _.",
+         "text": "Als nächstes auf ESPN2 die Welt-Serie von _.",
          "pick": 1
       },
       {
-         "text": " Step 1: _. Schritt 2: _. Schritt 3: Profit.",
+         "text": "Schritt 1: _. Schritt 2: _. Schritt 3: Profit.",
          "pick": 2
       },
       {
-         "text": " Hier ist die Kirche <br> Hier ist der Kirchturm <br> Öffne die Türen <br> Und da ist _.",
+         "text": "Hier ist die Kirche <br> Hier ist der Kirchturm <br> Öffne die Türen <br> Und da ist _.",
          "pick": 1
       },
       {
@@ -341,11 +341,11 @@
          "Pick": 1
       },
       {
-         "text": "Während seiner Kindheit hat Salvador Dal & iacute; produzierte Hunderte von Gemälden von _.",
+         "text": "Während seiner Kindheit hat Salvador Dal &iacute; Hunderte von Gemälden von _ produziert.",
          "pick": 1
       },
       {
-         "text": " In 1000 Jahren, wenn Papiergeld eine ferne Erinnerung ist, wie werden wir für Waren und Dienstleistungen bezahlen?",
+         "text": "In 1000 Jahren, wenn Papiergeld eine ferne Erinnerung ist, wie werden wir für Waren und Dienstleistungen bezahlen?",
          "pick": 1
       },
       {
@@ -353,30 +353,30 @@
          "pick": 1
       },
       {
-         "text": "Das Smithsonian Museum of Natural History hat gerade eine Ausstellung über _ eröffnet .",
+         "text": "Das Smithsonian Museum für Naturgeschichte hat gerade eine Ausstellung über _ eröffnet .",
          "pick": 1
       },
       {
-         "text": " Daddy, warum weint Mama?",
+         "text": " Papa, warum weint Mama?",
          "pick": 1
       }
    ],
    "whiteCards": [
-      "Abtreibungen von Kleiderbügeln.",
+      "Abtreibungen mit Kleiderbügeln.",
       "Mannfleisch.",
-      "Autocannibalism.",
-      "Vigorous Jazz Hands.",
-      "Flightless Birds.",
-      "Pictures of Boobs.",
-      "Doing the right thing.",
+      "Autocannibalismus.",
+      "Kräftige Jazzhände.",
+      "Flugunfähige Vögel.",
+      "Bilder von Brüsten.",
+      "Das richtige machen.",
       "Die Verletzung unserer grundlegendsten Menschenrechte.",
-      "Viagra &reg;.",
+      "Viagra&reg;.",
       "Selbsthass.",
       "Spektakuläre Bauchmuskeln.",
       "Ein ausgewogenes Frühstück.",
-      "Roofies.",
-      "Einen Boner verbergen.",
-      "Amputierte.",
+      "Dachdecker.",
+      "Einen Steifen verbergen.",
+      "Amputierte Körperteile.",
       "Der Urknall.",
       "Ehemaliger Präsident George W. Bush.",
       "Der Rev. Dr. Martin Luther King, Jr.",
@@ -387,12 +387,12 @@
       "Der Papst.",
       "Aaron Burr.",
       "Genitalpiercings.",
-      "Fingersatz",
+      "Fingern",
       "Ein gebleichtes Arschloch",
       "Pferdefleisch",
-      "Angst vor sich selbst",
+      "Die Angst selbst",
       "Wissenschaft",
-      "Älterer Japaner ich n.",
+      "Älterer Japaner.",
       "Fremde Gefahr.",
       "Die Terroristen.",
       "Die Schwulen wegbeten.",
@@ -401,7 +401,7 @@
       "Betrug bei den Special Olympics.",
       "Deutsch Dungeon-Pornos.",
       "Bingeing and Purging.",
-      "Schmollendes Gesicht machen.",
+      "Ein schmollendes Gesicht machen.",
       "William Shatner.",
       "Heteronormativität.",
       "Nickelback.",
@@ -417,7 +417,7 @@
       "Vorhaut.",
       "Ein Falke mit eine Kappe auf dem Kopf.",
       "Hormonspritzen.",
-      "Sterben an Ruhr.",
+      "Sterben an Durchfall.",
       "Sexy Kissenschlachten.",
       "Die unsichtbare Hand.",
       "Ein wirklich cooler Hut.",
@@ -435,13 +435,13 @@
       "Vorgeben, sich zu kümmern.",
       "Die U-Bahn.",
       "Meine Buckel.",
-      "Für Kinder ein Schwanz sein.",
+      "Zu Kindern ein Arsch sein.",
       "Gänse.",
       "Bling.",
-      "Schnüffelkleber.",
+      "Kleber schnüffeln.",
       "Der Süden.",
       "Ein Ödipuskomplex.",
-      "Alle Kekse vor AIDS essen b ake-sale.",
+      "Alle Kekse essen vor dem AIDS back verkauf.",
       "Sexting.",
       "SIE MÜSSEN ZUSÄTZLICHE PYLONEN BAUEN.",
       "Gegenseitig gesicherte Zerstörung.",
@@ -453,7 +453,7 @@
       "Ein Wurstfest.",
       "Michael Jackson.",
       "Emotionen.",
-      "Furz und weggehen.",
+      "Furzen und weggehen.",
       "Die chinesische Turnmannschaft.",
       "Nekrophilie.",
       "Spontaner Mensch.",
@@ -471,37 +471,37 @@
       "Katapulte.",
       "Masturbation.",
       "Natürliche Auslese.",
-      "Opposable Daumen.",
+      "Überliegende Daumen.",
       "Eine freche schwarze Frau.",
       "AIDS",
       "The KKK",
       "Figgy Pudding",
       "Seppuku",
       "Gandhi",
-      "Preteens",
+      "Vorpupertierende",
       "Toni Morrisons Vagina",
-      "Five-Dollar Footlongs &trade;",
+      "Five-Dollar Footlongs&trade;",
       "Landminen.",
       "Ein Meer von Problemen.",
       "Ein pikanter Frühstücks-Burrito.",
       "Christopher Walken.",
-      "Friction.",
-      "Balls.",
-      "Dental Dams.",
-      "Eine Dose Whoop-Ass .",
+      "Reibung.",
+      "Bälle.",
+      "Zahndämme.",
+      "Eine Dose Whoop-Ass.",
       "Ein winziges Pferd.",
-      "Warten bis zur Heirat.",
+      "Warten bis zur Hochzeit.",
       "Authentische mexikanische Küche.",
       "Dschingis Khan.",
-      "Alte Menschen riechen.",
-      "Feeding Rosie O'Donnell.",
-      "Pixelated Bukkake",
-      "Friends with Benefits",
-      "The Token Minority",
-      "The Tempur-Pedic &reg; Swedish Sleep System &trade ;.",
+      "Riechende alte Menschen.",
+      "Rosie O'Donnell füttern.",
+      "Verpixelte Bukkake",
+      "Freunde mit Vorteilen",
+      "Die Token Minderheit",
+      "The Tempur-Pedic&reg; Schwedisches schlafsystem&trade;.",
       "Eine thermonukleare Detonation.",
       "Take-backsies.",
-      "The Rapture.",
+      "Die Entrückung.",
       "Ein Kühler voller Organe.",
       "Süße, süße Rache.",
       "RoboCop.",
@@ -512,18 +512,18 @@
       "Der amerikanische Traum.",
       "Zieh dein Hemd aus.",
       "Ich Zeit.",
-      "Ein Mord am schlechtesten.",
+      "Ein Mord, der am schlechtesten ist.",
       "Der unvermeidliche Hitzetod des Universums.",
       "Die Torheit des Menschen.",
       "Das Ding, das deine Bauchmuskeln durch Stromschlag tötet.",
-      "Karten gegen die Menschlichkeit.",
+      "Cards Against Humanity.",
       "Feurige Kacke.",
       "Arme Leute .",
       "Essbare Unterhosen.",
-      "Britney Spears at 55.",
-      "All-you-can-eat-Garnelen für 4,99 USD.",
+      "Britney Spears bei 55.",
+      "All-you-can-eat-Garnelen für 4,99 Euro.",
       "Hin und her kacken. Für immer.",
-      "Fancy Feast &reg;",
+      "Fancy Feast&reg;",
       "Jüdische Bruderschaften.",
       "Ein verdammter Zauberer sein.",
       "Ausziehen.",
@@ -543,21 +543,21 @@
       "Halbnackt auf einem Denny-Parkplatz aufwachen.",
       "Gott.",
       "Sean Connery.",
-      "Saxophon-Soli.",
+      "Saxophon-Solo.",
       "Gloryholes.",
-      "The World of Warcraft.",
+      "World of Warcraft.",
       "Obdachlose.",
       "Scalping.",
       "Darth Vader.",
       "Den letzten bekannten Bison essen.",
-      "Leute, die nicht anrufen.",
-      "Hot Pockets &reg ;.",
+      "Kerle, die nicht anrufen.",
+      "Hot Pockets&reg;.",
       "Ein Zeitreise-Paradoxon.",
       "Der Milchmann.",
       "Hodentorsion.",
       "Lassen Sie einen Kronleuchter auf Ihre Feinde fallen und reiten Sie das Seil hoch.",
       "Weltfrieden.",
-      "A. salzige Überraschung.",
+      "Eine salzige Überraschung.",
       "Holocaust-Witze mit schlechtem Timing.",
       "Pockendecken.",
       "Dinge lecken, um sie als Ihre eigenen zu beanspruchen.",
@@ -587,19 +587,19 @@
       "Pädophile",
       "72 Jungfrauen",
       "Pabst Blue Ribbon",
-      "Domino's &trade; Oreo & Handel; Dessert Pizza.",
+      "Domino's&trade; Oreo&trade; Dessert Pizza.",
       "Eine Schnappschildkröte, die in die Spitze Ihres Penis beißt.",
       "Das Blut Christi.",
       "Halbherziges Vorspiel.",
       "Meine Sammlung von High-Tech-Sexspielzeugen.",
       "Eine Mittel- gealterter Mann auf Rollschuhen.",
-      "Hündinnen.",
-      "Bill Nye der Wissenschaftsmensch.",
+      "Bitches.",
+      "Bill Nye der Science Guy.",
       "Italiener.",
       "Eine Windmühle voller Leichen.",
-      "Adderall &trade;.",
+      "Adderall&trade;.",
       "Verkrüppelnde Schulden.",
-      "A. streunende Röhre.",
+      "Eine streunende Röhre.",
       "Tänzeln.",
       "Einen Nierenstein passieren.",
       "Ein Gehirntumor.",
@@ -622,7 +622,7 @@
       "Reiten in den Sonnenuntergang.",
       "In Flammen stehen.",
       "Tangled Slinkys.",
-      "Zivilist Opfer.",
+      "Zivilisten Opfer.",
       "Auschwitz.",
       "Meine Genitalien.",
       "Oralsex nicht erwidern.",
@@ -635,17 +635,17 @@
       "Inzest",
       "Grabraub",
       "Hoffnung",
-      "8 oz. von süßem mexikanischem Schwarzteer-Heroin.",
+      "8 kg von süßem mexikanischem Schwarzteer-Heroin.",
       "Kinder mit Arschkrebs.",
       "Zwinkern alten Leuten.",
       "Die Juden.",
       "Justin Bieber.",
-      "Doin 'it in the butt.",
-      "A. Leben voller Traurigkeit.",
-      "The Hamburglar.",
-      "Swooping.",
-      "Classist Undertones.",
-      "New Age Music.",
+      "Es in den Arsch machen.",
+      "Ein Leben voller Traurigkeit.",
+      "Der Hamburglar.",
+      "Sturzflug.",
+      "Klassistische Untertöne.",
+      "Neuzeit Musik.",
       "Keine Scheiße über die Dritte Welt.",
       "The Kool-Aid Man",
       "Ein heißes Durcheinander.",
@@ -654,16 +654,16 @@
       "Die Schwulen.",
       "Scientology.",
       "Östrogen.",
-      "GoGurt &reg.",
+      "GoGurt&reg;.",
       "Judge Judy.",
-      "Dick Finger.",
+      "Schwanz Hände.",
       "Rassismus.",
       "Überraschungssex!",
       "Polizeibrutalität.",
       "Passable Transvestiten.",
       "Das Virginia Tech-Massaker.",
-      "Wenn Sie furzen und ein bisschen herauskommt.",
-      "Oompa -Loompas.",
+      "Wenn man furzt und ein bisschen herauskommt.",
+      "Oompa-Loompas.",
       "Ein Fötus.",
       "Fettleibigkeit.",
       "Geschmackvoller Sideboob.",
@@ -675,24 +675,24 @@
       "Dritte Basis.",
       "Rassistisch voreingenommene SAT-Fragen.",
       "Pornostars.",
-      "Ein Super Soaker &trade; voller Katzenpisse.",
+      "Ein Super Soaker&trade; voller Katzenpisse.",
       "Muhammed (Lob sei ihm).",
       "Pubertät.",
       "Eine enttäuschende Geburtstagsfeier.",
       "Eine Erektion, die länger als vier Stunden dauert.",
-      "Weißes Privileg.",
-      "Werden Sie so wütend, dass Sie einen Boner knallen lassen.",
+      "Weiße Privilegien.",
+      "Werden Sie so wütend, dass Sie einen harten knallen lassen.",
       "Ehefrauenpflichten.",
       "Zwei Zwerge, die in einen Eimer scheißen.",
-      "Queefing.",
+      "Fotzenfurz.",
       "Wischen Sie ihren Hintern ab.",
       "Goldene Duschen.",
       "Barack Obama.",
       "Nazis.",
       "Ein robuster Mongoloid.",
       "Eine Verschwörung von M. Night Shyamalan.",
-      "Betrunken sein mit Mundwasser.",
-      "Lunchables &trade;",
+      "Betrunken von Mundwasser.",
+      "Lunchables&trade;",
       "Frauen in Joghurtwerbung.",
       "John Wilkes Booth .",
       "Kraftvolle Oberschenkel.",
@@ -702,7 +702,7 @@
       "Leibeigenschaft",
       "Kanye West",
       "Frauenwahlrecht",
-      "Kinder an der Leine",
+      "Kinder an einer Leine",
       "Harry Potter Erotik",
       "Der Tanz der Zuckerpflaumenfee.",
       "Lance Armstrongs fehlender Hoden.",
@@ -710,7 +710,7 @@
       "Die Amish.",
       "Tote Babys.",
       "Schönheitswettbewerbe für Kinder.",
-      "AX Körperspray.",
+      "AXE Körperspray.",
       "Zentauren.",
       "Ein Gefühl aufgeben.",
       "Oma.",
@@ -719,14 +719,14 @@
       "Das Wunder der Geburt.",
       "Fingermalerei.",
       "Ein Affe raucht eine Zigarre.",
-      "The Make-A-Wish &reg; Foundation.",
+      "The Make-A-Wish&reg; Foundation.",
       "Analkugeln.",
-      "The Force.",
+      "Die Macht.",
       "Kamikaze-Piloten.",
       "Trockenes Heben.",
       "Aktives Zuhören.",
       "Geister.",
-      "The Hustle.",
+      "Die Betriebsamkeit.",
       "Ein bisschen pinkeln .",
       "Ein weiterer verdammter Vampirfilm.",
       "Gestaltwandler.",
@@ -735,15 +735,15 @@
       "Ein moppiger Zoo-Löwe.",
       "Ein defektes Kondom.",
       "Teenagerschwangerschaft.",
-      "A Bop It &trade ;.",
-      "Erwarten Sie ein Rülpsen und Erbrechen auf dem Boden.",
+      "Ein Bop It&trade;.",
+      "Ein Rülpser erwarteb und auf den Boden kotzen.",
       "Schreckliche Unfälle mit Laser-Haarentfernung.",
       "Boogers.",
       "Unergründliche Dummheit.",
       "Ausbrechen in Gesang und Tanz.",
       "Suppe, die zu heiß ist.",
       "Morgan Freemans Stimme.",
-      "Nackt werden und Nickelodeon beobachten.",
+      "Sich Nackt machen und Nickelodeon schauen.",
       "MechaHitler.",
       "Fliegende Sexschlangen.",
       "Die wahre Bedeutung von Weihnachten.",
@@ -761,13 +761,13 @@
       "Der kleine Motor, der könnte.",
       "Vigilante Gerechtigkeit.",
       "Ein Todesstrahl.",
-      "Armer Li zB Entscheidungen.",
+      "Schlechte Lebensentscheidungen.",
       "Eine sanfte Liebkosung des inneren Oberschenkels.",
       "Embryonale Stammzellen.",
       "Nicolas Cage.",
       "Ein Gewehr in die Luft schießen, während Bälle tief in einem quietschenden Schwein.",
-      "Zu Geico &reg wechseln ;.",
-      "Die chronische.",
+      "Zu Geico&reg; wechseln.",
+      "Die chronik.",
       "Erektile Dysfunktion.",
       "Heimvideo von Oprah, der in eine magere Küche schluchzt",
       "Ein Eimer Fischköpfe.",
@@ -780,7 +780,7 @@
       "Kreuzigung.",
       "Ein Mikroschwein, das einen winzigen Regenmantel und Stiefel trägt.",
       "Verdammt friedlich und ruhig.",
-      "Benutztes Höschen.",
+      "Ein Benutztes Höschen.",
       "Ein Stamm von Kriegerinnen.",
       "Die Penny Whistle Solo von Mein Herz geht weiter",
       "Ein übergroßer Lutscher",
@@ -792,33 +792,33 @@
       "Die Kunst der Verführung.",
       "Der Teufel selbst.",
       "Rat eines weisen, alten schwarzen Mannes.",
-      "D. Beweise zerstören.",
-      "Das Licht einer Milliarde Sonnen.",
+      "Beweise zerstören.",
+      "Das Licht einer Milliarden Sonnen.",
       "Nasse Träume.",
       "Synergistische Managementlösungen.",
       "Ein Paar wachsen lassen.",
       "Stille.",
       "Ein M16-Sturmgewehr.",
-      "Poopy Windeln.",
+      "Zugeschissene Windeln.",
       "Ein Live-Studio-Publikum.",
       "Die Weltwirtschaftskrise.",
       "Ein spastischer Nerd.",
       "Rush Limbaughs weicher, beschissener Körper.",
       "Sean Hannity kitzeln, selbst nachdem er dir gesagt hat, du sollst aufhören.",
       "Stalin.",
-      "Brown people.",
+      "Braune Menschen.",
       "Rehab.",
       "Newt Gingrich einfangen und ihn zwingen, in einem Affenanzug zu tanzen.",
-      "Battlefield-Amputationen.",
+      "Kriegs-Amputationen.",
       "Ein Uppercut.",
-      "Shiny Objects.",
+      "Glänzende Objekte.",
       "Ein hässliches Gesicht.",
       "Menstruationswut.",
       "Eine Schlampe.",
       "Eine Billion Dollar.",
       "Brocken toter Prostituierter.",
       "Der gesamte Tabernakelchor der Mormonen.",
-      "Der weibliche Orgasmus .",
+      "Der weibliche Orgasmus.",
       "Extrem enge Hosen.",
       "Die Pfadfinder von Amerika.",
       "Sturmtruppen.",
