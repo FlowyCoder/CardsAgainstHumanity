@@ -70,15 +70,15 @@
         },
         {
             "text": "Ich schwöre, ich werde das Fandom verlassen, wenn _ passiert.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Ich habe gerade die _verse gestartet.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Das unglaubliche _ eines Gewinns _.",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": "Die Hauptsünde von FiMFic noobs: _ ohne _",
@@ -138,7 +138,7 @@
         },
         {
             "text": "Wenn sich nur Leute die Mühe machen, Ezns _ Guide zu lesen!",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Es gibt einen Crossover-Fic über _ und _ in der FB.",

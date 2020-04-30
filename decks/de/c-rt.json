@@ -10,7 +10,7 @@
         },
         {
             "text": "Was ist das Schlimmste, was jemand vor der Polizei sagen kann?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Was ist das Traurigste, was Sie jemals gesehen haben? ",
@@ -42,7 +42,7 @@
         },
         {
             "text": "Diese Woche auf VS fordert _ ein Spiel von _ heraus.",
-            "Pick": 3
+            "pick": 3
         },
         {
             "text": "Der Krieg ist vorbei. Wir veranstalten eine Parade _s Ehre. _ treibt den Wagen und _ ist verantwortlich für Konfetti. ",
@@ -66,11 +66,11 @@
         },
         {
             "text": "Warum hat Michael Gavin angeschrien?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Würdet ihr mich immer noch mögen, wenn mein Name _ wäre?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": " Du hast es wie ein _ gegen die Wand geworfen! ",
@@ -134,7 +134,7 @@
         },
         {
             "text": " Nachdem Burnie bei PAX verschwendet wurde, gab er bekannt, dass \"Ich bin _!\"",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": " Barbara saugt _. ",
@@ -150,11 +150,11 @@
         },
         {
             "text": "Beschreibe dich in einem Wort \/ Phrase.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "_ ist wahrscheinlich ein Typ der Venusaurier.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Diese Woche auf AHWU, _.",
@@ -182,11 +182,11 @@
         },
         {
             "text": "Was hört Ryans Kind?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Leute mögen _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "RT Recap, mit _!",
@@ -238,7 +238,7 @@
         },
         {
             "text": "Lindsay könnte _ versauen.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Lass es uns noch einmal machen! Das macht Spaß! ",
@@ -258,23 +258,23 @@
         },
         {
             "text": " Sagt unser Haus \"Wir lieben _?\"",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Detective _ is down!",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Wenn Jack ein Frosch wäre und du ihn küsstest, in was würde er sich verwandeln?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Ich ersticke dich in meinem _!",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Scheiß drauf, ich meine _, richtig?",
-            "Pick": 1
+            "pick": 1
         }
     ],
     "whiteCards": [

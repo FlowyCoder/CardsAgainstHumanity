@@ -106,11 +106,11 @@
         },
         {
             "text": "Sad Panda ist eigentlich _ und _.",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": "Ich werde sterben, wenn ich _ review _.",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": " In einem neuen neuesten Ankündigungsvideo hat _ einen Auftritt bei _ angekündigt. ",
@@ -250,11 +250,11 @@
         },
         {
             "text": "Ich _ damit du nicht musst.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Eine Intervention wurde für Linkara inszeniert, nachdem _ in seinem Hut entdeckt wurde.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Was hat Nash diese Woche kaputt gemacht?",
@@ -354,11 +354,11 @@
         },
         {
             "text": "Die nächste Person, die Channel Awesome verlässt, wird ihre Abreise über _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Linkaras Yu-Gi-Oh-Deck besteht nur aus _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": " STOP OR I WILL _. ",
@@ -422,7 +422,7 @@
         },
         {
             "text": "_ wird leben!",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Welches neue Upgrade hat Nash durchgeführt? Laura geben? ",
@@ -498,15 +498,15 @@
         },
         {
             "text": "Wenn _ einen Uncanny Valley-Kurzfilm inszenieren müsste, hätte er _.",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": "Brad Tries _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Bei ConBravo wird _ ein Panel auf _ hosten.",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": "Doug bedauert immer noch den Tag, für den er sich für ein Let's Play-Video entschieden hat \"Bart Simpsons Abenteuer\".",
@@ -626,19 +626,19 @@
         },
         {
             "text": " Das nächste Mal auf Obscurus Lupa Presents: \"_ IV: Die Rückkehr von _ \".",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": "Als ich das letzte Mal Badesalz nahm, landete ich _ in _.",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": "Der wahre Grund, warum MAGFest ruiniert wurde, war _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Um einen weiteren Tag zu toppen, werden zukünftige Comicautoren _ verwenden, um eine Beziehung aufzubrechen.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Was hat die nächste Geschichte der Power Rangers verzögert?",
@@ -666,7 +666,7 @@
         },
         {
             "text": "Rock and Roll ist nichts anderes als _ und die Wut von _!",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": "Wenn Sie _ mit _ ablenken können, bezeichnen wir es als \"Braten \".",
@@ -686,19 +686,19 @@
         },
         {
             "text": "Womit muss Diamanda Hagan sonst noch jeden Tag leben?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Was ist in Sci Fi Guys Weste?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Was hält die Neugestaltung der Website auf?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Wie wird Tara ihr nächstes Nilpferd nennen?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Was ist echt? Warum hat noch niemand das TGWTG Panel Drinking Game gespielt? ",
@@ -714,11 +714,11 @@
         },
         {
             "text": "Todd wusste, dass er keine Chance hatte, nachdem er versucht hatte, Lupa mit _ zu verführen.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "WIR KÄMPFEN WIE _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Die Zuschauer waren schockiert, als Paw _ zum besten Song des Films erklärte.",
@@ -794,11 +794,11 @@
         },
         {
             "text": "_ landete in der Top-WTFIWWY-Geschichte dieser Woche.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Wann erscheint die nächste Geschichte der Power Rangers?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": " Was kommt als nächstes auf WTFIWWY? ",

@@ -25,11 +25,11 @@
             "text": "_: Ich melde mich freiwillig als Tribut!"
         },
         {
-            "Pick": 1,
+            "pick": 1,
             "text": "_: es ist magisch lecker."
         },
         {
-            "Pick": 1,
+            "pick": 1,
             "text": "_: Nur ein anderer Weg dass Gott uns zeigt, dass er uns liebt. "
         },
         {
@@ -65,7 +65,7 @@
             "text": "Ein wildes _ erscheint! Sie haben _ verwendet! Es ist super effektiv!"
         },
         {
-            "Pick": 1,
+            "pick": 1,
             "text": "Entsprechend Ein neuer UN-Vertrag gilt jetzt als Massenvernichtungswaffe. "
         },
         {
@@ -213,7 +213,7 @@
             "text": "Ich denke, ich muss Fluffums zum Welpentraining mitnehmen: Er hat diese schreckliche Angewohnheit von _."
         },
         {
-            "Pick": 3,
+            "pick": 3,
             "text": "Ich wurde einmal wegen eines Vorfalls mit _ in die Personalabteilung geschickt. _ und (angeblich) _. "
         },
         {
@@ -361,7 +361,7 @@
             "text": "In der Nacht vor einem Schneesturm sollten Sie sich immer mit _ und _ eindecken."
         },
         {
-            "Pick": 1,
+            "pick": 1,
             "text": "Die NSA möchte mit mir über eine E-Mail sprechen, die ich mit folgenden Schlüsselbegriffen verschickt habe:"
         },
         {

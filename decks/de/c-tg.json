@@ -18,11 +18,11 @@
         },
         {
             "text": "Die Bürger von Innsmouth sind wirklich _!",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "_ fällt, jeder stirbt.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Mein GM hat gerade seine Freundin zu einem _ Charakter gemacht. Wie gefickt sind wir?",
@@ -94,7 +94,7 @@
         },
         {
             "text": "Ich habe eine magische Rakete auf _ geworfen.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Warte! Ich bin ein _! Lassen Sie mich Ihnen von meinem _! ",
@@ -170,19 +170,19 @@
         },
         {
             "text": "Berg, schwarzer Lotus, Sack, um _ zu werfen.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "_ gefolgt von unentgeltlich _ wurde ich aus meiner letzten Gruppe rausgeschmissen.",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": "Das _ führt meine Klinge.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Fass mich nicht an _!",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Der GM hat sein neues _ eingeladen, sich dem Spiel anzuschließen. Sie spielen _. ",

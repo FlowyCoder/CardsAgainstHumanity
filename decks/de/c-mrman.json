@@ -110,7 +110,7 @@
         },
         {
             "text": "Es gibt eine Zeit für Frieden, eine Zeit für Krieg und eine Zeit für _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Eine Wahrsagerin sagte mir, ich werde ein Leben voller _ führen.",
@@ -146,7 +146,7 @@
         },
         {
             "text": "Achten Sie nicht auf _ hinter dem Vorhang!",
-            "Pick": 1
+            "pick": 1
         }
     ],
     "whiteCards": [

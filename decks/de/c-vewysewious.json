@@ -134,7 +134,7 @@
         },
         {
             "text": "Die Hügel leben mit _ von _.",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": "Ich dachte, ein _ zu sein, war das Beste, was ich je hatte, bis ich ein _ wurde. ",
@@ -158,19 +158,19 @@
         },
         {
             "text": "_ ALL THE _.",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": "Es gab VIEL _ _ _.",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": "_ Jesus ist der Jesus von _.",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": "Das Forum ist fast kaputt gegangen, als _ in The Dead Thread gepostet wurde.",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": "Ein Mod-Krieg um _ ist während _ aufgetreten.",
@@ -214,11 +214,11 @@
         },
         {
             "text": "Domo reiste über _, um den Preis von _ zu gewinnen.",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": "Ich habe _, wie ein verdammter Erwachsener.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "_ wurde wegen _ aus dem tinychat verbannt.",
@@ -266,7 +266,7 @@
         "Clown Stripperinnen.",
         "KERMIT FLAIL.",
         "Vorzeitige Ejakulation.",
-        "Bounty, the Quicker Picker Upper.",
+        "Bounty, the Quicker picker Upper.",
         "Bleeding Anuses.",
         "Ein Löffel, der zu groß ist.",
         "Nicht schwanger sein.",

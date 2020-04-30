@@ -34,19 +34,19 @@
         },
         {
             "text": "Mein nächstes Video zeigt _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Wir haben eine Karte gefunden Charlie! Eine Karte zu _ Mountain!",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Honigdachs gibt kein _!",
-            "Pick": 1
+            "pick": 1
         },
         {
             "Text": "Gut. Schlecht. Ich bin der Typ mit dem _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "Text": "Heil dem _, Baby.",
@@ -70,11 +70,11 @@
         },
         {
             "text": "Ich suche das Heilige _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Wie werden wir eine Armee der Toten an unseren Burgmauern aufhalten?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Schneller als ein schnelles _! Stärker als ein _! ",
@@ -146,11 +146,11 @@
         },
         {
             "text": "Nun, Sie können nicht erwarten, die höchste Exekutivgewalt auszuüben, nur weil eine wässrige Torte ein _ auf Sie geworfen hat!",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "\" _! \"\" Es ist nur ein Modell. \"",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Gute Nacht. Schlafen Sie gut. Ich werde dich höchstwahrscheinlich morgen früh. ",
@@ -186,11 +186,11 @@
         },
         {
             "text": "Zwei mal zwei, Hände von _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Wendy's _ & Juicy.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Ich schwöre bei meinem hübschen Blumenmuster, ich werde es dir tun.",
@@ -270,11 +270,11 @@
         },
         {
             "text": "Das einzig Gute _ ist ein totes _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Eine Abstimmung für _ ist eine Abstimmung für _.",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": "_ is the new _.",
@@ -302,7 +302,7 @@
         },
         {
             "text": "Dies sind meine Schergen von _!",
-            "Pick": 1
+            "pick": 1
         }
     ],
     "whiteCards": [

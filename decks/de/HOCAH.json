@@ -2,15 +2,15 @@
     "blackCards": [
         {
             "text": "Ein weiser Mann sagte:\" Alles dreht sich um Sex. Außer Sex. Beim Sex geht es um _. \"",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Unsere Beziehung ist streng professionell. Lassen Sie uns die Dinge nicht mit _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "komplizieren. Korruption. Verrat. _. In Kürze bei Netflix, \"House of _.\"",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": "Weil Sie _ genossen haben, dachten wir, Sie möchten _.",
@@ -30,7 +30,7 @@
         },
         {
             "text": "Alle meine Besprechungen abbrechen. Wir haben eine Situation mit _, die meine sofortige Aufmerksamkeit erfordert.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Wenn Sie ihn brauchen, Remy Danton kann ein paar Fäden ziehen und dich _ holen, aber es wird dich kosten. ",

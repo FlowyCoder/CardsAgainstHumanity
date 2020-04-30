@@ -46,7 +46,7 @@
         },
         {
             "text": "In ihrem nächsten Romcom spielt Katherine Heigl eine Frau, die sich in das _ ihres Chefs verliebt.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Die Pantone-Farbe des Jahres ist inspiriert von _. ",
@@ -94,11 +94,11 @@
         },
         {
             "text": "Etwas Altes, etwas Neues, etwas Geliehenes und _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Warum können wir keine schönen Dinge haben?",
-            "Pick": 1
+            "pick": 1
         }
     ],
     "whiteCards": [

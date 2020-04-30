@@ -54,11 +54,11 @@
         },
         {
             "text": "Planen Sie ein Drei-Gänge-Menü.",
-            "Pick": 3
+            "pick": 3
         },
         {
             "text": "Schmeckt wie _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Hey Leute, schaut euch meine _ Montage an! ",
@@ -142,11 +142,11 @@
         },
         {
             "text": "Viel Spaß, sei nicht _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Sei nicht böse, werde _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Wenn es um japanische Küche geht, gibt es einfach nichts Besseres als _.",
@@ -158,7 +158,7 @@
         },
         {
             "text": "Ich bin ein Experte für _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Gerade angekündigt: Die brandneue Anime-Adaption von _ mit _ als Stimme von _ _. ",
@@ -182,7 +182,7 @@
         },
         {
             "text": " Und der Preis für die schmutzigste Szene in einem Erwachsenenfilm geht an \"5 Frauen und _.\"",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": " Was hat dich heute geärgert? ",
@@ -214,11 +214,11 @@
         },
         {
             "text": "Wer wusste, dass ich von _ leben kann?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Take _, es wird länger dauern.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": " Endlich wurde mir klar, dass ich den Tiefpunkt erreicht hatte, als ich anfing, durch Müllcontainer nach _ zu graben. ",
@@ -318,7 +318,7 @@
         },
         {
             "text": "Und auf seiner Farm hatte er _, EIEIO!",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Ein wilder _ erschien! Es wurde _! ",
@@ -346,19 +346,19 @@
         },
         {
             "text": "Was ist das Traurigste, was Sie jemals gesehen haben?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Wenn das Leben Ihnen _ gibt, machen Sie _.",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": "Was ist dein Lieblingsbuch?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Wer braucht ein Bidet, wenn du _ hast?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Töte es mit _ ! ",
@@ -462,11 +462,11 @@
         },
         {
             "text": "Was ist das nächste große Kickstarter-Projekt?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Was ist der Sinn des Lebens?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Mein Leben für _!",
@@ -573,7 +573,7 @@
         "Beer Pong.",
         "Verwenden von scharfer Soße als Gleitmittel.",
         "Vorzeitige Ejakulation.",
-        "Bounty, the Quicker Picker Upper.",
+        "Bounty, the Quicker picker Upper.",
         "Smooth Jazz.",
         "Bleeding Anuses.",
         "A. Löffel, der zu groß ist.",

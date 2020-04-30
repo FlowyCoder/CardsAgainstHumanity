@@ -25,7 +25,7 @@
             "text": "Erst kommt die Liebe, dann kommt die Ehe, dann kommt _."
         },
         {
-            "Pick": 1,
+            "pick": 1,
             "text": "Wenn es dir gefällt, dann solltest du _ darauf setzen."
         },
         {
@@ -41,11 +41,11 @@
             "text": "Sie ist nicht nur meine Frau. Sie ist auch _."
         },
         {
-            "Pick": 1,
+            "pick": 1,
             "text": "Erwägen Sie, _ in Ihre Gelübde aufzunehmen."
         },
         {
-            "Pick": 1,
+            "pick": 1,
             "text": " Was ist die häufigste Ursache für Jitter am Hochzeitstag? "
         },
         {
@@ -117,7 +117,7 @@
             "text": "Das erste Problem, mit dem sich das Paar in der Eheberatung befasst, ist _."
         },
         {
-            "Pick": 1,
+            "pick": 1,
             "text": "Nichts sagt \"Erfüllung der lebenslangen Verpflichtung\" wie _."
         },
         {
@@ -125,7 +125,7 @@
             "text": "Es ist heutzutage im Trend, _ in Ihre Hochzeit aufzunehmen."
         },
         {
-            "Pick": 1,
+            "pick": 1,
             "text": "Jeder Hochzeitstoast sollte mindestens eine Erwähnung von _ enthalten."
         },
         {
@@ -157,11 +157,11 @@
             "text": "Studien zeigen, dass verheiratete Menschen viel häufiger als Alleinstehende _ haben."
         },
         {
-            "Pick": 1,
+            "pick": 1,
             "text": "Welches einzigartige Detail enthielt das Kleid der Braut?"
         },
         {
-            "Pick": 1,
+            "pick": 1,
             "text": "Verheiratet zu sein bedeutet, die Freiheit zu haben, _ zu umarmen."
         },
         {

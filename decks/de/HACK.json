@@ -18,7 +18,7 @@
         },
         {
             "text": "In einer Anhörung im Kongress behauptete US-CYBERCOM-Kommandeur General Alexander, der letzte Datenverstoß sei auf _ zurückzuführen.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "The Maker Faire was unerwartet unterbrochen von _. ",
@@ -90,11 +90,11 @@
         },
         {
             "text": "So lange und danke für all das _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Sicherheit durch Dunkelheit ist besser als _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Rule 34 _.",
@@ -106,7 +106,7 @@
         },
         {
             "text": "Unsere mächtigste Waffe für die Zombie-Apokalypse wird _ sein.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Nur die Hälfte der Programmierung ist Codierung. Die anderen 90% sind _. ",
@@ -170,11 +170,11 @@
         },
         {
             "text": "Ich bin es verdammt leid, von _ zu hören.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Ich würde mehr mit meinem Leben anfangen, außer diesem _ im Weg.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Ich arbeite 80 Stunden pro Woche und kann mir immer noch kein _ leisten.",
@@ -274,11 +274,11 @@
         },
         {
             "text": "_ Schuss zuerst.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "Text": "_ Killed the Barrel Roll",
-            "Pick": 1
+            "pick": 1
         },
         {
             "Text": "_ Niemand hat Zeit für Dat !! ",
@@ -294,11 +294,11 @@
         },
         {
             "text": "_ wird auch von Prism überwacht.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "_ hält uns zusammen.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": " _ ist ein besserer Ersatz für Krypto. ",
@@ -444,7 +444,7 @@
         "Manisch lachen, während du ein Monokel trägst",
         "Ein Sandwich machen",
         "Den Ballmer Peak pflegen",
-        "Lock Picks",
+        "Lock picks",
         "Level 8 Portal",
         "Lemon Party",
         "Etwas auf der Con lernen",

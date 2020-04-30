@@ -30,11 +30,11 @@
         },
         {
             "text": "Alle Versuche, _, sind gescheitert und haben die Wirtschaftssanktionen lähmt.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Essen _ gab mir _.",
-            "Pick": 2
+            "pick": 2
         }
     ],
     "whiteCards": [

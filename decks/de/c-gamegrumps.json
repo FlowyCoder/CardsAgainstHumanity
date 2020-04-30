@@ -34,11 +34,11 @@
         },
         {
             "text": "Echtes Gespräch? _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "Text": "Jon und Arin gewinnen! Sie erkennen, dass _ wichtiger ist.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "Text": "Jon und Arin saugt an _. ",
@@ -94,7 +94,7 @@
         },
         {
             "text": "Weißt du, welche Fanpost mich jedes Mal am glücklichsten macht, wenn ich sie sehe? Es sind diejenigen, bei denen die Leute sagen: _ .",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Du ruinierst meine Integrität! _ wird mich jetzt nicht einstellen! ",
@@ -134,11 +134,11 @@
         },
         {
             "text": "\" Diese neuen T-Shirts werden einige Leben verändern, Arin. \"",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "... Worüber zum Teufel redet ihr zwei ?!",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "_. Dies ist wie eine meiner japanischen Animes! ",
@@ -278,11 +278,11 @@
         },
         {
             "text": "KOMMEN SIE UND _ UND WILLKOMMEN BEI _!",
-            "Pick": 2
+            "pick": 2
         },
         {
             "text": "Wenn _ sich aus _ entwickelt hat, warum zum Teufel ist es dann noch _, Alter ?!",
-            "Pick": 3
+            "pick": 3
         },
         {
             "text": "_? Ziemlich schlau. _? Ziemlich schlau. _? FUCKING GENIUS !!!! ",
@@ -354,11 +354,11 @@
         },
         {
             "text": "Was ist in Arins Kinn zu finden?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Was will ich heute ertragen?",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": " Willkommen im Sonic Team! Wir machen _, denke ich! ",
@@ -390,11 +390,11 @@
         },
         {
             "text": "Wenn ich in den Spiegel schaue, sehe ich _.",
-            "Pick": 1
+            "pick": 1
         },
         {
             "text": "Was ist der wahre Grund, warum Jon gegangen ist?",
-            "Pick": 1
+            "pick": 1
         }
     ],
     "whiteCards": [
