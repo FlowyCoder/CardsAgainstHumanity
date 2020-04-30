@@ -71,6 +71,34 @@
         {
             "text": "In Soviet Russia _ fucks you.",
             "pick": 1
+        },
+        {
+            "text": "Oh Junge, 3 Uhr morgens, Zeit für _!",
+            "pick": 1
+        },
+        {
+            "text": "Lasst uns alle mal als _ verkleiden.",
+            "pick": 1
+        },
+        {
+            "text": "Was kann Flo nicht sehen?",
+            "pick": 1
+        },
+        {
+            "text": "Danke Herr Doktor, aber ich nutze lieber _ als meine Kinder impfen zu lassen.",
+            "pick": 1
+        },
+        {
+            "text": "Donald Trump empfielt gegen _, _ zu nutzen.",
+            "pick": 2
+        },
+        {
+            "text": "Soll ich dir mal ein richtigen _ zeigen.",
+            "pick": 1
+        },
+        {
+            "text": "Das wäre für Patti eine 10: _.",
+            "pick": 1
         }
     ],
     "whiteCards": [
@@ -107,7 +135,7 @@
         "So lauchig sein, dass dich ein Windstoß bis nach Gorbitz trägt",
         "Das Gorbitzer Ghetto",
         "Vorwärts immer, rückwärts nimmer",
-        "Kakao auf der Treppenstufe verschütten, darauf ausrutschen und die Treppe runterfallen. 2 mal.",
+        "Kakao auf der Treppenstufe verschütten, darauf ausrutschen und die Treppe runterfallen. ",
         "Cottbus",
         "Analperlen aus dem Arsch ziehen, als würde man einen Motor starten",
         "Nichtmehr Furzen können und deswegen irgendwann explodieren",
@@ -115,6 +143,28 @@
         "Läderlappen",
         "Dominanz zeigen",
         "Im Yuumi Cosplay auf die Furry Convention gehen",
-        "Dicke Kinder im Park mit Schokobons bewerfen und \"Los, tanz für mich\" rufen."
+        "Dicke Kinder im Park mit Schokobons bewerfen und \"Los, tanz für mich\" rufen.",
+        "Alles unter 12",
+        "3 * 6 ist auch 18",
+        "Abfallentsorgung in der Abtreibungsklinik",
+        "Hitlers Gas Rechnung",
+        "Hass!",
+        "Hauptsache es atmet",
+        "Jüdische Kinder",
+        "Nicht nur ein echter Pirat sticht auch ins rote Meer",
+        "Seelenlose Rothaarige \"Menschen\"",
+        "Akasha Säulen",
+        "Kinder von Impfgegnern ",
+        "Flatearther",
+        "Luftballons für den Kindergeburtstag (mit Noppen)",
+        "Butterme Damen Kaninchen Zerhacker-360 Grad G-Punkt Stimulation",
+        "Eine Karte legen, die außer dir niemand lustig findet",
+        "So fett sein, dass Menschen in deinen Bauchfalten verloren gehen",
+        "Ein toter Elch am Straßenrand.",
+        "Orcas, die Elche jagen",
+        "Wurstpralinen",
+        "Surrender at 20",
+        "Der Schimpanse, der bei Riot die Bugs fixed",
+        "Die Kartoffel, auf der die EU-Server laufen"
     ]
 }

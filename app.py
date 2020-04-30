@@ -85,7 +85,8 @@ def join(sid, data):
         'host': host.name,
         'points_to_win': game.points_to_win,
         'hand_size': game.hand_size,
-        'card_decks': game.card_decks
+        'card_decks': game.card_decks,
+        'language': game.language
     }
 
 
@@ -243,10 +244,12 @@ def players(sid, password):
     return [player.to_json() for game in house.games.values() for player in game.players]
 
 
+@sio.on("leave")
+def leave(sid):
+    disconnect(sid)
+
 @sio.event
 def disconnect(sid):
-    print('disconnect ', sid)
-
     for game in house.games.values():
         if game.has_player(sid):
             sio.leave_room(sid, game.name)
