@@ -24,13 +24,6 @@ class Game:
         self.card_decks = ["Base"]
 
     def get_card_decks(self):
-
-        # payload = {'decks[]': self.card_decks, 'type': 'JSON'}
-        # r = requests.post('https://crhallberg.com/cah/output.php', payload)
-        # black_white_deck = r.text
-        # o = json.loads(black_white_deck)
-
-        # Load json into list object
         decks = load_decks(self.card_decks, self.language)
 
         self.black_cards: list = decks['black_cards']
@@ -39,19 +32,24 @@ class Game:
         random.shuffle(self.white_cards)
 
     def draw_black(self):
-        self.black_card = self.black_cards.pop()
+        self.black_card = self.black_cards.pop(0)
+        self.black_cards.append(self.black_card)
 
     def draw_white(self, amount = 1):
         choosen_cards = self.white_cards[:amount]
         del self.white_cards[:amount]
+        self.white_cards += choosen_cards
         return choosen_cards
-
-    def start_round(self):
+    
+    def start_game(self):
+        self.disconnected = []
         self.game_state = "Game"
         self.get_card_decks()
+        self.start_round()
+
+    def start_round(self):
+        
         self.draw_black()
-        randIds = list(range(len(self.players)))
-        random.shuffle(randIds)
         self.next_zar()
         self.revealed_players = []
         self.placed_cards = {}
@@ -59,7 +57,6 @@ class Game:
         for player in self.players:
             player.deleted_card = False
             player.hand += self.draw_white(self.hand_size - len(player.hand))
-            player.tempId = randIds.pop()
             
     def addPoint(self, sid):
         for player in self.players:
@@ -80,8 +77,8 @@ class Game:
     def get_player_with_name(self, name) -> Player:
         return next(filter(lambda p: p.name == name, self.players), None)
     
-    def get_player_with_tempId(self, tempId) -> Player:
-        return next(filter(lambda p: p.tempId == tempId, self.players), None)
+    def get_player_with_pos(self, pos) -> Player:
+        return next(filter(lambda p: p.reveal_pos == pos, self.players), None)
 
     def get_disconnected_player(self, name):
         return next(filter(lambda p: p.name == name ,self.disconnected), None)
@@ -124,11 +121,6 @@ class Game:
 
     def player_placed_cards(self, sid, cards):
         self.placed_cards[sid] = cards
-        player = self.get_player(sid)
-        for card in cards:
-            if(card in player.hand):
-                self.white_cards.append(card)
-                player.hand.remove(card)
 
     def all_players_placed(self):
         return len(self.players) - 1 == len(self.placed_cards)

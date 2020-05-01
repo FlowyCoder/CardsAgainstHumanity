@@ -4,6 +4,7 @@ import random
 
 import eventlet
 import socketio
+import sys
 
 from classes.house import House
 from classes.player import Player
@@ -43,14 +44,13 @@ def join(sid, data):
         host = game.get_player(game.host)
 
         players = []
-        temp_ids = {}
         revealed = {}
 
         for player in game.players:
             player_data = {'name': player.name, 'points': player.points}
             if player.reveal_pos: player_data['placed'] = True
             players.append(player_data)
-            temp_ids[player.reveal_pos] = player.tempId
+
 
             if player.sid in game.revealed_players:
                 revealed[player.reveal_pos] = game.placed_cards[player.sid]
@@ -61,7 +61,6 @@ def join(sid, data):
             'points_to_win': game.points_to_win,
             'hand_size': game.hand_size,
             'card_decks': game.card_decks,
-            'temp_ids': temp_ids,
             'revealed': revealed,
             'hand': disconnected_player.hand,
             'black': game.black_card,
@@ -72,10 +71,11 @@ def join(sid, data):
         return {'error': 'Game already running.'}
 
     player = Player(sid, name)
-    sio.enter_room(sid, lobby)
-
+    
     if not game.add_player(player):
         return {'error': 'Player name already exists.'}
+
+    sio.enter_room(sid, lobby)
 
     sio.emit('player_join', {'name': player.name}, lobby)  # Sending new player information to other players
     host = game.get_player(game.host)
@@ -105,7 +105,7 @@ def start_game(sid):
     for player in game.players:
         player.hand = []
 
-    game.start_round()
+    game.start_game()
 
     for player in game.players:
         player.points = 0
@@ -143,11 +143,11 @@ def reveal_cards(sid, pos):
 
     player.reveal_pos = pos
     
-    sio.emit("cards_revealed", {'pos': pos, 'tempId': player.tempId, 'cards': game.placed_cards[player.sid]}, room=game.name)
+    sio.emit("cards_revealed", {'pos': pos, 'cards': game.placed_cards[player.sid]}, room=game.name)
 
 
 @sio.on("winner_selected")
-def winner(sid, tempId):
+def winner(sid, pos):
     game = house.get_game_of_player(sid)
 
     if game.get_zar().sid != sid:
@@ -156,7 +156,7 @@ def winner(sid, tempId):
     if not game.all_cards_revealed():
         return {'error': 'Not all cards are revealed.'}
 
-    winning_player = game.get_player_with_tempId(tempId)
+    winning_player = game.get_player_with_pos(pos)
 
     if not winning_player:
         return {'error': 'Player with name ' + name + ' not found.'}
@@ -171,9 +171,9 @@ def winner(sid, tempId):
             points[player.name] = player.points
         sio.emit('game_end', points, room=game.name)
     else:
-        tempIds = {}
+        pos = {}
         for player in game.players:
-            tempIds[player.tempId] = player.name
+            pos[player.reveal_pos] = player.name
 
         game.start_round()
         for player in game.players:
@@ -182,7 +182,7 @@ def winner(sid, tempId):
                 'black': game.black_card,
                 'zar': game.get_zar().name,
                 'winner': winning_player.name,
-                'tempIds': tempIds
+                'pos': pos
             }, to=player.sid)
 
 @sio.on("change_settings")
@@ -262,6 +262,8 @@ def disconnect(sid):
             player = game.remove_player(sid)
             sio.emit('host', game.get_player(game.host).name, game.name)
             sio.emit('player_leave', player.name, game.name)
+
+            if game.game_state == "Lobby": return
                 
             if len(game.players) < 3:
                 game.end_game()
@@ -283,4 +285,7 @@ def disconnect(sid):
 
 
 if __name__ == '__main__':
-    eventlet.wsgi.server(eventlet.wrap_ssl(eventlet.listen(('', 5000)), certfile='cert.crt', keyfile='private.key', server_side=True), app)
+    if(len(sys.argv) > 0):
+        eventlet.wsgi.server(eventlet.listen(('', 5000)), app)
+    else:
+        eventlet.wsgi.server(eventlet.wrap_ssl(eventlet.listen(('', 5000)), certfile='cert.crt', keyfile='private.key', server_side=True), app)

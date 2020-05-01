@@ -6,7 +6,6 @@ class Player:
         self.hand = []
         self.points = points
         self.spectator = spec
-        self.tempId = 0
         self.deleted_card = False
         self.reveal_pos = None
 
@@ -17,6 +16,5 @@ class Player:
             'hand': self.hand,
             'points': self.points,
             'spectator': self.spectator,
-            'tempId': self.tempId,
             'deleted_card': self.deleted_card
         }
