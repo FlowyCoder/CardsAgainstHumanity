@@ -55,6 +55,7 @@ class Game:
         self.placed_cards = {}
 
         for player in self.players:
+            player.reveal_pos = None
             player.deleted_card = False
             player.hand += self.draw_white(self.hand_size - len(player.hand))
             
