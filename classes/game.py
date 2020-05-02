@@ -121,6 +121,10 @@ class Game:
 
     def player_placed_cards(self, sid, cards):
         self.placed_cards[sid] = cards
+        player = self.get_player(sid)
+        for card in cards:
+            if(card in player.hand):
+                player.hand.remove(card)
 
     def all_players_placed(self):
         return len(self.players) - 1 == len(self.placed_cards)
