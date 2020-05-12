@@ -6,11 +6,11 @@
         },
         {
             "pick": 1,
-            "text": "Während meines ersten Spiels von D & amp; D, ich habe versehentlich _. "
+            "text": "Während meines ersten Spiels von D & amp; D, ich habe versehentlich _."
         },
         {
             "pick": 1,
-            "text": " Bob Ross 'wenig bekannte erste Show hieß \"The Joy of _.\""
+            "text": "Bob Ross 'wenig bekannte erste Show hieß \"The Joy of _.\""
         },
         {
             "pick": 1,
@@ -21,7 +21,7 @@
             "text": "Der Discovery Channel präsentiert: _ week."
         }
     ],
-    "WhiteCards": [
+    "whiteCards": [
         "A neck Bart, der zu 10% aus Käse besteht.",
         "Becken-Zauberei.",
         "So leise wie möglich kacken.",

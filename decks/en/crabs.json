@@ -54,7 +54,7 @@
         },
         {
             "pick": 1,
-            "text": "_? That's what <i>she<\/i> said."
+            "text": "_? That's what <i>she</i> said."
         },
         {
             "pick": 1,
@@ -106,7 +106,7 @@
         },
         {
             "pick": 2,
-            "text": "Dear, your father and I found _ and _ in your bedroom. I'm shocked, and frankly just a <i>little<\/i> disappointed."
+            "text": "Dear, your father and I found _ and _ in your bedroom. I'm shocked, and frankly just a <i>little</i> disappointed."
         },
         {
             "pick": 1,
@@ -122,7 +122,7 @@
         },
         {
             "pick": 1,
-            "text": "From the people who brough you <i>Sharktopus<\/i> and <i>Sharknado<\/i>, Syfy's&reg; next horror film combines sharks with _."
+            "text": "From the people who brough you <i>Sharktopus</i> and <i>Sharknado</i>, Syfy's&reg; next horror film combines sharks with _."
         },
         {
             "pick": 1,
@@ -190,7 +190,7 @@
         },
         {
             "pick": 1,
-            "text": "I don't care <i>what<\/i> people say, _ is <i>not<\/i> a crime."
+            "text": "I don't care <i>what</i> people say, _ is <i>not</i> a crime."
         },
         {
             "pick": 3,
@@ -418,11 +418,11 @@
         },
         {
             "pick": 1,
-            "text": "What <i>exactly<\/i> is up my ass?"
+            "text": "What <i>exactly</i> is up my ass?"
         },
         {
             "pick": 1,
-            "text": "What <i>really<\/i> gave Superman his powers?"
+            "text": "What <i>really</i> gave Superman his powers?"
         },
         {
             "pick": 1,
@@ -478,7 +478,7 @@
         },
         {
             "pick": 1,
-            "text": "Who's <i>really<\/i> to blame?"
+            "text": "Who's <i>really</i> to blame?"
         },
         {
             "pick": 2,
@@ -510,17 +510,17 @@
         },
         {
             "pick": 1,
-            "text": "You have my sword. &quot;And you have my bow.&quot; &quot;And <i>my<\/i> _!&quot;"
+            "text": "You have my sword. &quot;And you have my bow.&quot; &quot;And <i>my</i> _!&quot;"
         },
         {
             "pick": 1,
-            "text": "You people are sick! There's <i>nothing<\/i> funny about _."
+            "text": "You people are sick! There's <i>nothing</i> funny about _."
         }
     ],
     "whiteCards": [
-        "<i>Hakuna matata<\/i>, motherfucker.",
+        "<i>Hakuna matata</i>, motherfucker.",
         "A $50 cup of coffee literally made from cat shit.",
-        "A <i>really<\/i> bad yeast infection.",
+        "A <i>really</i> bad yeast infection.",
         "A 5 lb. bag of gummy bears.",
         "A bachelor's degree in communication.",
         "A ball pit filled with testicles.",
@@ -569,7 +569,7 @@
         "A sexually aggressive koala.",
         "A shit-ton of glitter.",
         "A shockingly flatulent bobcat.",
-        "A silly old sea captain who's just <i>full<\/i> of stories.",
+        "A silly old sea captain who's just <i>full</i> of stories.",
         "A single, shiny Bitcoin.",
         "A slack-jawed yokel.",
         "A song about how great Nebraska is.",
@@ -595,7 +595,7 @@
         "An asexual bonobo.",
         "An effeminate southern homophobe.",
         "An emergency root canal.",
-        "An emperor penguin with <i>no<\/i> sense of shame.",
+        "An emperor penguin with <i>no</i> sense of shame.",
         "An entire bottle of J&auml;germeister&reg;.",
         "An erotic novel about the Loch Ness Monster.",
         "An extra-large can of Bone Bashful&trade; brand Chinchilla Pudding Sauce.",
@@ -615,7 +615,7 @@
         "Bacon that can feel pain.",
         "Bacon-flavored lube",
         "Barfing into a tiny, bejewled handbag.",
-        "Being able to name <i>all<\/i> of the different kinds of olives.",
+        "Being able to name <i>all</i> of the different kinds of olives.",
         "Being born with a tail.",
         "Being circumcised with a deli slicer.",
         "Being heteroflexible.",
@@ -732,7 +732,7 @@
         "Plato's Allegory of the Cave or some other pretentious bullshit.",
         "Poop soup.",
         "Pooping in public.",
-        "Posting on www.reddit.com\/r\/gonewild\/",
+        "Posting on www.reddit.com/r/gonewild/",
         "Pretending to be a malfunctioning robot.",
         "Pretending to have the hiccups.",
         "Primo schlick material.",
@@ -835,7 +835,7 @@
         "www.clownpenis.fart",
         "Yiffing.",
         "Yoga pants.",
-        "You know, one of <i>them<\/i> sorts of things.",
+        "You know, one of <i>them</i> sorts of things.",
         "Zatopeepee, the Blind Fucksman.",
         "Ze Germans."
     ],

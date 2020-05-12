@@ -1,7 +1,7 @@
 {
     "blackCards": [
         {
-            "text": "I used to be an adventurer like you, then I took a\/an _ in the _.",
+            "text": "I used to be an adventurer like you, then I took a/an _ in the _.",
             "pick": 2
         },
         {
@@ -101,11 +101,11 @@
             "pick": 1
         },
         {
-            "text": "Disguised as _, mild-mannered _. ",
+            "text": "Disguised as _, mild-mannered _.",
             "pick": 2
         },
         {
-            "text": "Able to leap _ in a single bound! ",
+            "text": "Able to leap _ in a single bound!",
             "pick": 1
         },
         {
@@ -293,7 +293,7 @@
             "pick": 1
         },
         {
-            "text": "_ at last! _ at last! Thank God almighty, I'm _ at last! ",
+            "text": "_ at last! _ at last! Thank God almighty, I'm _ at last!",
             "pick": 1
         },
         {

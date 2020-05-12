@@ -189,7 +189,7 @@
             "pick": 2
         },
         {
-            "text": "0\/10 would not _.",
+            "text": "0/10 would not _.",
             "pick": 1
         },
         {
@@ -364,7 +364,7 @@
     "whiteCards": [
         "Call of Cthulhu",
         "Corruption of Champions",
-        "\/sp\/",
+        "/sp/",
         "HERESY!",
         "Buying GW paints and primer",
         "Your Other Honor!",
@@ -443,7 +443,7 @@
         "Teacup Ride.",
         "WHERE IS FELIX RAMIREZ?",
         "Dr. Assmarbles",
-        "\/d\/M",
+        "/d/M",
         "Macha's stash of mon-keigh lewds.",
         "A Tactical Genius.",
         "Burning Fate Points to survive.",
@@ -496,7 +496,7 @@
         "Half-fae catboys.",
         "SAN loss.",
         "Monte Cooke's rancid fursuit.",
-        "Kickstarting a \/tg\/ homebrew only to have it turn out to be shit.",
+        "Kickstarting a /tg/ homebrew only to have it turn out to be shit.",
         "Waiting for Time Wizards!",
         "Covering yourself in mountain dew and rolling around the FLGS bathroom.",
         "Enuff Dakka",
@@ -600,7 +600,7 @@
         "Being a motherfucking sorcerer",
         "Surf ninjas",
         "A diaper of holding flamethrower",
-        "Fa\/tg\/uy",
+        "Fa/tg/uy",
         "Sexbots",
         "Peasant railguns",
         "That guy",
@@ -618,9 +618,9 @@
         "The Biggest, Blackest Knight",
         "Brogan",
         "stat me",
-        "\/co\/",
-        "\/d\/",
-        "\/x\/",
+        "/co/",
+        "/d/",
+        "/x/",
         "The whizzard",
         "Mary Sue",
         "Crazy Hassan",
@@ -631,7 +631,7 @@
         "Anthropomorphism in 40K"
     ],
     "c-tg": {
-        "name": "[C] \/tg\/",
+        "name": "[C] /tg/",
         "black": [
             0,
             1,

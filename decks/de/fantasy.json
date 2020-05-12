@@ -6,15 +6,15 @@
         },
         {
             "pick": 2,
-            "text": "Critics schwärmen von HBOs neuem <i> Game of Thrones <\/ i> -Spin-off, \"_ of _. \""
+            "text": "Critics schwärmen von HBOs neuem <i> Game of Thrones </ i> -Spin-off, \"_ of _. \""
         },
         {
             "pick": 1,
-            "text": " Von Poesie und Musik müde, Die unsterblichen Elfen füllen ihre Tage jetzt mit _. "
+            "text": "Von Poesie und Musik müde, Die unsterblichen Elfen füllen ihre Tage jetzt mit _."
         },
         {
             "pick": 1,
-            "text": " Die Legende erzählt von einer Prinzessin, die seit tausend Jahren schläft und nur von _ geweckt werden kann. "
+            "text": "Die Legende erzählt von einer Prinzessin, die seit tausend Jahren schläft und nur von _ geweckt werden kann."
         },
         {
             "pick": 1,
@@ -25,7 +25,7 @@
             "text": "Dein Vater war ein mächtiger Zauberer, Harry. Bevor er starb, hat er dir etwas sehr Kostbares hinterlassen: _."
         }
     ],
-    "WhiteCards": [
+    "whiteCards": [
         "Ein CGI-Drache.",
         "Ein Zwerg, der gewonnen hat Lass dich nicht allein, bis du die Penisgrößen vergleichst.",
         "Ein schwuler Zauberer, der alle schwul macht.",
@@ -43,7 +43,7 @@
         "Auf ein episches Abenteuer gehen und eine wertvolle Lektion über Freundschaft lernen.",
         "Einen Zauberer an einen Heizkörper fesseln und ihn übergießen mit Kerosin.",
         "Hodor.",
-        "Wie heiß Orlando Bloom in <i> Herr der Ringe <\/ i> war.",
+        "Wie heiß Orlando Bloom in <i> Herr der Ringe </ i> war.",
         "Einen Zauberer in die Eier knien.",
         "Scheingeschichten für autistisches Weiß Männer",
         "Lesen Sie den Hobbit unter der Decke, während Mama und Papa sich unten anschreien.",
