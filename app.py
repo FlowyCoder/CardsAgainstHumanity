@@ -285,7 +285,7 @@ def disconnect(sid):
 
 
 if __name__ == '__main__':
-    if(len(sys.argv) > 0 and sys.argv[0] == 'dev'):
+    if(len(sys.argv) > 1 and sys.argv[1] == 'dev'):
         eventlet.wsgi.server(eventlet.listen(('', 5000)), app)
     else:
         eventlet.wsgi.server(eventlet.wrap_ssl(eventlet.listen(('', 5000)), certfile='cert.crt', keyfile='private.key', server_side=True), app)
