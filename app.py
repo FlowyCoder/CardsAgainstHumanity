@@ -46,11 +46,11 @@ def join(sid, data):
         players = []
         revealed = {}
 
-        for player in game.players:
-            player_data = {'name': player.name, 'points': player.points}
-            if player.reveal_pos: player_data['placed'] = True
+        for player in [*game.players, *game.disconnected]:
+            player_data = {'name': player.name, 'points': player.points }
+            if player.reveal_pos or player.sid in game.placed_cards.keys(): player_data['placed'] = True
+            player_data['connected'] = (player in game.players)
             players.append(player_data)
-
 
             if player.sid in game.revealed_players:
                 revealed[player.reveal_pos] = game.placed_cards[player.sid]
@@ -81,7 +81,11 @@ def join(sid, data):
     host = game.get_player(game.host)
 
     return {
-        'players': list(map(lambda p: {'name': p.name, 'points': 0}, game.players)),
+        'players': list(map(lambda p: {
+            'name': p.name,
+            'points': 0,
+            'connected': p in game.players
+        }, [*game.players, *game.disconnected])),
         'host': host.name,
         'points_to_win': game.points_to_win,
         'hand_size': game.hand_size,

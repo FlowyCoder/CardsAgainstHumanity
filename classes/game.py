@@ -71,6 +71,7 @@ class Game:
         self.revealed_players = []
         self.black_card = None
         self.zar = 0
+        self.disconnected = []
 
     def get_player(self, sid) -> Player:
         return next(filter(lambda p: p.sid == sid, self.players), None)
@@ -88,7 +89,7 @@ class Game:
         player = self.get_player(sid)
         if player:
             if self.players.index(player) <= self.zar:
-                self.zar = (self.zar - 1) % len(self.players)
+                self.zar = (self.zar - 1) % (len(self.players) - 1)
 
             self.players.remove(player)
             if self.host == player.sid and len(self.players) > 0:
