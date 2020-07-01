@@ -39,6 +39,7 @@ def join(sid, data):
     if disconnected_player:
         sio.enter_room(sid, lobby)
         game.add_player(disconnected_player)
+        game.update_sid(disconnected_player.sid, sid)
         disconnected_player.sid = sid
         sio.emit('player_join', {'name': disconnected_player.name}, lobby)
         host = game.get_player(game.host)

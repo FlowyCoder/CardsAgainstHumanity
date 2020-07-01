@@ -149,6 +149,14 @@ class Game:
     def is_player_revealed(self, sid):
         return sid in self.revealed_players
 
+    def update_sid(self, old_sid, new_sid):
+        if old_sid in self.placed_cards.keys():
+            self.placed_cards[new_sid] = self.placed_cards[old_sid]
+            del self.placed_cards[old_sid]
+        if old_sid in self.revealed_players:
+            self.revealed_players.remove(old_sid)
+            self.revealed_players.append(new_sid)
+
     def to_json(self):
         return {
             'name': self.name,
