@@ -1,31 +1,35 @@
 {
 	"folders": [
 		{
-			"name": "app-next",
-			"path": "..\\..\\Programmieren\\Directus\\app-next"
-		},
-		{
 			"name": "webseite",
 			"path": "..\\BWG\\webseite"
 		},
 		{
-			"name": "robolab-group-034",
-			"path": "..\\..\\Programmieren\\Robolab\\robolab-group-034"
-		},
-		{
+			"name": "extension-toolkit",
 			"path": "..\\..\\Programmieren\\Directus\\extension-toolkit"
 		},
 		{
-			"path": "..\\..\\Programmieren\\Directus\\SDK-Generator"
-		},
-		{
+			"name": "cah",
 			"path": "..\\cah"
 		},
 		{
+			"name": "test-sdk",
 			"path": "..\\..\\Programmieren\\Directus\\test-sdk"
 		},
 		{
+			"name": "CardsAgainstHumanity",
 			"path": "."
+		},
+		{
+			"name": "next",
+			"path": "..\\..\\Programmieren\\Directus\\next"
+		},
+		{
+			"name": "API-Specification",
+			"path": "..\\..\\Programmieren\\Directus\\API-Specification"
+		},
+		{
+			"path": "..\\..\\Programmieren\\Directus\\md interface\\next\\app"
 		}
 	]
 }
