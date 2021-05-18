@@ -3,7 +3,7 @@ import re
 linkFile = open("/var/www/vhosts/system/playcah.de/conf/last_nginx.conf")
 linkText = linkFile.read()
 
-regex = r"ssl_certificate.*?(/usr/local/psa/var/certificates/.*?)$"
+regex = r"ssl_certificate.*?(/usr/local/psa/var/certificates/.*?);$"
 keyFilePath = re.findall(regex, linkText, re.MULTILINE)[0]
 
 keyFile = open(keyFilePath)
