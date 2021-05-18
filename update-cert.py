@@ -12,9 +12,9 @@ keyText = keyFile.read()
 print(keyText)
 
 privateKeyRegex = r"(-----BEGIN PRIVATE KEY-----(.|\s)*?-----END PRIVATE KEY-----)"
-privateKey = re.findall(privateKeyRegex, keyText)[0]
+privateKey = re.findall(privateKeyRegex, keyText)[0][0]
 privateCertRegex = r"(-----BEGIN CERTIFICATE-----(.|\s)*?-----END CERTIFICATE-----)"
-certificate = re.findall(privateCertRegex, keyText)[0]
+certificate = re.findall(privateCertRegex, keyText)[0][0]
 
 print(privateKey, certificate)
 
