@@ -9,14 +9,10 @@ keyFilePath = re.findall(regex, linkText, re.MULTILINE)[0]
 keyFile = open(keyFilePath)
 keyText = keyFile.read()
 
-print(keyText)
-
 privateKeyRegex = r"(-----BEGIN PRIVATE KEY-----(.|\s)*?-----END PRIVATE KEY-----)"
 privateKey = re.findall(privateKeyRegex, keyText)[0][0]
 privateCertRegex = r"(-----BEGIN CERTIFICATE-----(.|\s)*?-----END CERTIFICATE-----)"
 certificate = re.findall(privateCertRegex, keyText)[0][0]
-
-print(privateKey, certificate)
 
 pkFileOut = open("private.key", "w")
 pkFileOut.write(privateKey)
